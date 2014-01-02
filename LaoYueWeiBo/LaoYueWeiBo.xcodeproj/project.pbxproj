@@ -1,0 +1,571 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		700520EB186B1FAB006AAD8B /* LeftMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 700520EA186B1FAB006AAD8B /* LeftMenuViewController.m */; };
+		700520F6186B2AEE006AAD8B /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 700520F5186B2AEE006AAD8B /* HomeViewController.m */; };
+		700520F9186B2AFB006AAD8B /* MessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 700520F8186B2AFB006AAD8B /* MessageViewController.m */; };
+		700520FC186B2B04006AAD8B /* MineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 700520FB186B2B04006AAD8B /* MineViewController.m */; };
+		700520FF186B2B16006AAD8B /* SquareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 700520FE186B2B16006AAD8B /* SquareViewController.m */; };
+		70052102186B2B21006AAD8B /* MoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 70052101186B2B21006AAD8B /* MoreViewController.m */; };
+		703779231868863600011066 /* MMDrawerBarButtonItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 7037791B1868863600011066 /* MMDrawerBarButtonItem.m */; };
+		703779241868863600011066 /* MMDrawerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7037791E1868863600011066 /* MMDrawerController.m */; };
+		703779251868863600011066 /* MMDrawerVisualState.m in Sources */ = {isa = PBXBuildFile; fileRef = 703779201868863600011066 /* MMDrawerVisualState.m */; };
+		703779261868863600011066 /* UIViewController+MMDrawerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 703779221868863600011066 /* UIViewController+MMDrawerController.m */; };
+		703779281868864900011066 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 703779271868864900011066 /* QuartzCore.framework */; };
+		7068FF2018672964000A9CFC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7068FF1F18672964000A9CFC /* Foundation.framework */; };
+		7068FF2218672964000A9CFC /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7068FF2118672964000A9CFC /* CoreGraphics.framework */; };
+		7068FF2418672964000A9CFC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7068FF2318672964000A9CFC /* UIKit.framework */; };
+		7068FF2A18672964000A9CFC /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7068FF2818672964000A9CFC /* InfoPlist.strings */; };
+		7068FF2C18672964000A9CFC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7068FF2B18672964000A9CFC /* main.m */; };
+		7068FF3018672964000A9CFC /* LYAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7068FF2F18672964000A9CFC /* LYAppDelegate.m */; };
+		7068FF3918672964000A9CFC /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7068FF3818672964000A9CFC /* XCTest.framework */; };
+		7068FF3A18672964000A9CFC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7068FF1F18672964000A9CFC /* Foundation.framework */; };
+		7068FF3B18672964000A9CFC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7068FF2318672964000A9CFC /* UIKit.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		7068FF3C18672964000A9CFC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7068FF1418672964000A9CFC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7068FF1B18672964000A9CFC;
+			remoteInfo = LaoYueWeiBo;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		700520E9186B1FAB006AAD8B /* LeftMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeftMenuViewController.h; sourceTree = "<group>"; };
+		700520EA186B1FAB006AAD8B /* LeftMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeftMenuViewController.m; sourceTree = "<group>"; };
+		700520F4186B2AEE006AAD8B /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
+		700520F5186B2AEE006AAD8B /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
+		700520F7186B2AFB006AAD8B /* MessageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageViewController.h; sourceTree = "<group>"; };
+		700520F8186B2AFB006AAD8B /* MessageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageViewController.m; sourceTree = "<group>"; };
+		700520FA186B2B04006AAD8B /* MineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MineViewController.h; sourceTree = "<group>"; };
+		700520FB186B2B04006AAD8B /* MineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MineViewController.m; sourceTree = "<group>"; };
+		700520FD186B2B16006AAD8B /* SquareViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SquareViewController.h; sourceTree = "<group>"; };
+		700520FE186B2B16006AAD8B /* SquareViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SquareViewController.m; sourceTree = "<group>"; };
+		70052100186B2B21006AAD8B /* MoreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoreViewController.h; sourceTree = "<group>"; };
+		70052101186B2B21006AAD8B /* MoreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoreViewController.m; sourceTree = "<group>"; };
+		7037791A1868863600011066 /* MMDrawerBarButtonItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMDrawerBarButtonItem.h; sourceTree = "<group>"; };
+		7037791B1868863600011066 /* MMDrawerBarButtonItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMDrawerBarButtonItem.m; sourceTree = "<group>"; };
+		7037791C1868863600011066 /* MMDrawerController+Subclass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MMDrawerController+Subclass.h"; sourceTree = "<group>"; };
+		7037791D1868863600011066 /* MMDrawerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMDrawerController.h; sourceTree = "<group>"; };
+		7037791E1868863600011066 /* MMDrawerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMDrawerController.m; sourceTree = "<group>"; };
+		7037791F1868863600011066 /* MMDrawerVisualState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMDrawerVisualState.h; sourceTree = "<group>"; };
+		703779201868863600011066 /* MMDrawerVisualState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMDrawerVisualState.m; sourceTree = "<group>"; };
+		703779211868863600011066 /* UIViewController+MMDrawerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+MMDrawerController.h"; sourceTree = "<group>"; };
+		703779221868863600011066 /* UIViewController+MMDrawerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+MMDrawerController.m"; sourceTree = "<group>"; };
+		703779271868864900011066 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		7068FF1C18672964000A9CFC /* LaoYueWeiBo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LaoYueWeiBo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7068FF1F18672964000A9CFC /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		7068FF2118672964000A9CFC /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		7068FF2318672964000A9CFC /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		7068FF2718672964000A9CFC /* LaoYueWeiBo-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "LaoYueWeiBo-Info.plist"; sourceTree = "<group>"; };
+		7068FF2918672964000A9CFC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		7068FF2B18672964000A9CFC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		7068FF2D18672964000A9CFC /* LaoYueWeiBo-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LaoYueWeiBo-Prefix.pch"; sourceTree = "<group>"; };
+		7068FF2E18672964000A9CFC /* LYAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LYAppDelegate.h; sourceTree = "<group>"; };
+		7068FF2F18672964000A9CFC /* LYAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LYAppDelegate.m; sourceTree = "<group>"; };
+		7068FF3718672964000A9CFC /* LaoYueWeiBoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LaoYueWeiBoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		7068FF3818672964000A9CFC /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		7068FF1918672964000A9CFC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				703779281868864900011066 /* QuartzCore.framework in Frameworks */,
+				7068FF2218672964000A9CFC /* CoreGraphics.framework in Frameworks */,
+				7068FF2418672964000A9CFC /* UIKit.framework in Frameworks */,
+				7068FF2018672964000A9CFC /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7068FF3418672964000A9CFC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7068FF3918672964000A9CFC /* XCTest.framework in Frameworks */,
+				7068FF3B18672964000A9CFC /* UIKit.framework in Frameworks */,
+				7068FF3A18672964000A9CFC /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		700520E1186B1796006AAD8B /* UIs */ = {
+			isa = PBXGroup;
+			children = (
+				700520E9186B1FAB006AAD8B /* LeftMenuViewController.h */,
+				700520EA186B1FAB006AAD8B /* LeftMenuViewController.m */,
+				700520EF186B2AAC006AAD8B /* Home */,
+				700520F0186B2AAC006AAD8B /* Message */,
+				700520F1186B2AAC006AAD8B /* Mine */,
+				700520F3186B2AAC006AAD8B /* Square */,
+				700520F2186B2AAC006AAD8B /* More */,
+			);
+			path = UIs;
+			sourceTree = "<group>";
+		};
+		700520EF186B2AAC006AAD8B /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				700520F4186B2AEE006AAD8B /* HomeViewController.h */,
+				700520F5186B2AEE006AAD8B /* HomeViewController.m */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		700520F0186B2AAC006AAD8B /* Message */ = {
+			isa = PBXGroup;
+			children = (
+				700520F7186B2AFB006AAD8B /* MessageViewController.h */,
+				700520F8186B2AFB006AAD8B /* MessageViewController.m */,
+			);
+			path = Message;
+			sourceTree = "<group>";
+		};
+		700520F1186B2AAC006AAD8B /* Mine */ = {
+			isa = PBXGroup;
+			children = (
+				700520FA186B2B04006AAD8B /* MineViewController.h */,
+				700520FB186B2B04006AAD8B /* MineViewController.m */,
+			);
+			path = Mine;
+			sourceTree = "<group>";
+		};
+		700520F2186B2AAC006AAD8B /* More */ = {
+			isa = PBXGroup;
+			children = (
+				70052100186B2B21006AAD8B /* MoreViewController.h */,
+				70052101186B2B21006AAD8B /* MoreViewController.m */,
+			);
+			path = More;
+			sourceTree = "<group>";
+		};
+		700520F3186B2AAC006AAD8B /* Square */ = {
+			isa = PBXGroup;
+			children = (
+				700520FD186B2B16006AAD8B /* SquareViewController.h */,
+				700520FE186B2B16006AAD8B /* SquareViewController.m */,
+			);
+			path = Square;
+			sourceTree = "<group>";
+		};
+		70377907186885E200011066 /* Classses */ = {
+			isa = PBXGroup;
+			children = (
+				700520E1186B1796006AAD8B /* UIs */,
+				703779181868863600011066 /* 3rd */,
+			);
+			path = Classses;
+			sourceTree = "<group>";
+		};
+		703779171868862E00011066 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		703779181868863600011066 /* 3rd */ = {
+			isa = PBXGroup;
+			children = (
+				703779191868863600011066 /* MMDrawerController */,
+			);
+			path = 3rd;
+			sourceTree = "<group>";
+		};
+		703779191868863600011066 /* MMDrawerController */ = {
+			isa = PBXGroup;
+			children = (
+				7037791A1868863600011066 /* MMDrawerBarButtonItem.h */,
+				7037791B1868863600011066 /* MMDrawerBarButtonItem.m */,
+				7037791C1868863600011066 /* MMDrawerController+Subclass.h */,
+				7037791D1868863600011066 /* MMDrawerController.h */,
+				7037791E1868863600011066 /* MMDrawerController.m */,
+				7037791F1868863600011066 /* MMDrawerVisualState.h */,
+				703779201868863600011066 /* MMDrawerVisualState.m */,
+				703779211868863600011066 /* UIViewController+MMDrawerController.h */,
+				703779221868863600011066 /* UIViewController+MMDrawerController.m */,
+			);
+			path = MMDrawerController;
+			sourceTree = "<group>";
+		};
+		7068FF1318672964000A9CFC = {
+			isa = PBXGroup;
+			children = (
+				7068FF2518672964000A9CFC /* LaoYueWeiBo */,
+				7068FF1E18672964000A9CFC /* Frameworks */,
+				7068FF1D18672964000A9CFC /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		7068FF1D18672964000A9CFC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7068FF1C18672964000A9CFC /* LaoYueWeiBo.app */,
+				7068FF3718672964000A9CFC /* LaoYueWeiBoTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7068FF1E18672964000A9CFC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				703779271868864900011066 /* QuartzCore.framework */,
+				7068FF1F18672964000A9CFC /* Foundation.framework */,
+				7068FF2118672964000A9CFC /* CoreGraphics.framework */,
+				7068FF2318672964000A9CFC /* UIKit.framework */,
+				7068FF3818672964000A9CFC /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7068FF2518672964000A9CFC /* LaoYueWeiBo */ = {
+			isa = PBXGroup;
+			children = (
+				7068FF2E18672964000A9CFC /* LYAppDelegate.h */,
+				7068FF2F18672964000A9CFC /* LYAppDelegate.m */,
+				70377907186885E200011066 /* Classses */,
+				703779171868862E00011066 /* Resources */,
+				7068FF2618672964000A9CFC /* Supporting Files */,
+			);
+			path = LaoYueWeiBo;
+			sourceTree = "<group>";
+		};
+		7068FF2618672964000A9CFC /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				7068FF2718672964000A9CFC /* LaoYueWeiBo-Info.plist */,
+				7068FF2818672964000A9CFC /* InfoPlist.strings */,
+				7068FF2B18672964000A9CFC /* main.m */,
+				7068FF2D18672964000A9CFC /* LaoYueWeiBo-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		7068FF1B18672964000A9CFC /* LaoYueWeiBo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7068FF4818672964000A9CFC /* Build configuration list for PBXNativeTarget "LaoYueWeiBo" */;
+			buildPhases = (
+				7068FF1818672964000A9CFC /* Sources */,
+				7068FF1918672964000A9CFC /* Frameworks */,
+				7068FF1A18672964000A9CFC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LaoYueWeiBo;
+			productName = LaoYueWeiBo;
+			productReference = 7068FF1C18672964000A9CFC /* LaoYueWeiBo.app */;
+			productType = "com.apple.product-type.application";
+		};
+		7068FF3618672964000A9CFC /* LaoYueWeiBoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7068FF4B18672964000A9CFC /* Build configuration list for PBXNativeTarget "LaoYueWeiBoTests" */;
+			buildPhases = (
+				7068FF3318672964000A9CFC /* Sources */,
+				7068FF3418672964000A9CFC /* Frameworks */,
+				7068FF3518672964000A9CFC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7068FF3D18672964000A9CFC /* PBXTargetDependency */,
+			);
+			name = LaoYueWeiBoTests;
+			productName = LaoYueWeiBoTests;
+			productReference = 7068FF3718672964000A9CFC /* LaoYueWeiBoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		7068FF1418672964000A9CFC /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = LY;
+				LastUpgradeCheck = 0500;
+				ORGANIZATIONNAME = LYue;
+				TargetAttributes = {
+					7068FF3618672964000A9CFC = {
+						TestTargetID = 7068FF1B18672964000A9CFC;
+					};
+				};
+			};
+			buildConfigurationList = 7068FF1718672964000A9CFC /* Build configuration list for PBXProject "LaoYueWeiBo" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7068FF1318672964000A9CFC;
+			productRefGroup = 7068FF1D18672964000A9CFC /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				7068FF1B18672964000A9CFC /* LaoYueWeiBo */,
+				7068FF3618672964000A9CFC /* LaoYueWeiBoTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		7068FF1A18672964000A9CFC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7068FF2A18672964000A9CFC /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7068FF3518672964000A9CFC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		7068FF1818672964000A9CFC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				703779251868863600011066 /* MMDrawerVisualState.m in Sources */,
+				70052102186B2B21006AAD8B /* MoreViewController.m in Sources */,
+				7068FF2C18672964000A9CFC /* main.m in Sources */,
+				703779231868863600011066 /* MMDrawerBarButtonItem.m in Sources */,
+				703779261868863600011066 /* UIViewController+MMDrawerController.m in Sources */,
+				700520EB186B1FAB006AAD8B /* LeftMenuViewController.m in Sources */,
+				703779241868863600011066 /* MMDrawerController.m in Sources */,
+				700520F9186B2AFB006AAD8B /* MessageViewController.m in Sources */,
+				700520FC186B2B04006AAD8B /* MineViewController.m in Sources */,
+				700520FF186B2B16006AAD8B /* SquareViewController.m in Sources */,
+				7068FF3018672964000A9CFC /* LYAppDelegate.m in Sources */,
+				700520F6186B2AEE006AAD8B /* HomeViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7068FF3318672964000A9CFC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		7068FF3D18672964000A9CFC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7068FF1B18672964000A9CFC /* LaoYueWeiBo */;
+			targetProxy = 7068FF3C18672964000A9CFC /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		7068FF2818672964000A9CFC /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7068FF2918672964000A9CFC /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		7068FF4618672964000A9CFC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		7068FF4718672964000A9CFC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		7068FF4918672964000A9CFC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "LaoYueWeiBo/LaoYueWeiBo-Prefix.pch";
+				INFOPLIST_FILE = "LaoYueWeiBo/LaoYueWeiBo-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		7068FF4A18672964000A9CFC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "LaoYueWeiBo/LaoYueWeiBo-Prefix.pch";
+				INFOPLIST_FILE = "LaoYueWeiBo/LaoYueWeiBo-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		7068FF4C18672964000A9CFC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/LaoYueWeiBo.app/LaoYueWeiBo";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "LaoYueWeiBo/LaoYueWeiBo-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "LaoYueWeiBoTests/LaoYueWeiBoTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		7068FF4D18672964000A9CFC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/LaoYueWeiBo.app/LaoYueWeiBo";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "LaoYueWeiBo/LaoYueWeiBo-Prefix.pch";
+				INFOPLIST_FILE = "LaoYueWeiBoTests/LaoYueWeiBoTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		7068FF1718672964000A9CFC /* Build configuration list for PBXProject "LaoYueWeiBo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7068FF4618672964000A9CFC /* Debug */,
+				7068FF4718672964000A9CFC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7068FF4818672964000A9CFC /* Build configuration list for PBXNativeTarget "LaoYueWeiBo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7068FF4918672964000A9CFC /* Debug */,
+				7068FF4A18672964000A9CFC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7068FF4B18672964000A9CFC /* Build configuration list for PBXNativeTarget "LaoYueWeiBoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7068FF4C18672964000A9CFC /* Debug */,
+				7068FF4D18672964000A9CFC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 7068FF1418672964000A9CFC /* Project object */;
+}
