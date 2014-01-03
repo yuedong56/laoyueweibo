@@ -37,7 +37,7 @@
     //抽屉结构
     self.drawerController = [[MMDrawerController alloc] initWithCenterViewController:self.tabBarController leftDrawerViewController:self.leftMenuVC];
     
-    [self.drawerController setMaximumLeftDrawerWidth:220.0f];
+    [self.drawerController setMaximumLeftDrawerWidth:LeftMenuWidth];
     [self.drawerController setOpenDrawerGestureModeMask:MMOpenDrawerGestureModeAll];
     [self.drawerController setCloseDrawerGestureModeMask:MMCloseDrawerGestureModeAll];
     

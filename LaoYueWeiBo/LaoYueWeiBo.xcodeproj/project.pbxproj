@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		300FF43A1876828700C1B091 /* LeftMenuCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 300FF4391876828700C1B091 /* LeftMenuCell.m */; };
+		300FF43D1876883600C1B091 /* LeftHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 300FF43C1876883600C1B091 /* LeftHeaderView.m */; };
+		300FF4401876884400C1B091 /* LeftFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 300FF43F1876884400C1B091 /* LeftFooterView.m */; };
+		300FF4481876A38D00C1B091 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 300FF4451876A38D00C1B091 /* Default-568h@2x.png */; };
+		300FF4491876A38D00C1B091 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 300FF4461876A38D00C1B091 /* Default.png */; };
+		300FF44A1876A38D00C1B091 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 300FF4471876A38D00C1B091 /* Default@2x.png */; };
 		700520EB186B1FAB006AAD8B /* LeftMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 700520EA186B1FAB006AAD8B /* LeftMenuViewController.m */; };
 		700520F6186B2AEE006AAD8B /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 700520F5186B2AEE006AAD8B /* HomeViewController.m */; };
 		700520F9186B2AFB006AAD8B /* MessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 700520F8186B2AFB006AAD8B /* MessageViewController.m */; };
@@ -40,6 +46,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		300FF437187650F500C1B091 /* GlobalConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GlobalConfig.h; sourceTree = "<group>"; };
+		300FF4381876828700C1B091 /* LeftMenuCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeftMenuCell.h; sourceTree = "<group>"; };
+		300FF4391876828700C1B091 /* LeftMenuCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeftMenuCell.m; sourceTree = "<group>"; };
+		300FF43B1876883600C1B091 /* LeftHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeftHeaderView.h; sourceTree = "<group>"; };
+		300FF43C1876883600C1B091 /* LeftHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeftHeaderView.m; sourceTree = "<group>"; };
+		300FF43E1876884400C1B091 /* LeftFooterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeftFooterView.h; sourceTree = "<group>"; };
+		300FF43F1876884400C1B091 /* LeftFooterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeftFooterView.m; sourceTree = "<group>"; };
+		300FF4451876A38D00C1B091 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		300FF4461876A38D00C1B091 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		300FF4471876A38D00C1B091 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		700520E9186B1FAB006AAD8B /* LeftMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeftMenuViewController.h; sourceTree = "<group>"; };
 		700520EA186B1FAB006AAD8B /* LeftMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeftMenuViewController.m; sourceTree = "<group>"; };
 		700520F4186B2AEE006AAD8B /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
@@ -101,11 +117,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		300FF436187650E200C1B091 /* Public */ = {
+			isa = PBXGroup;
+			children = (
+				300FF437187650F500C1B091 /* GlobalConfig.h */,
+				300FF444187693F800C1B091 /* Category */,
+			);
+			path = Public;
+			sourceTree = "<group>";
+		};
+		300FF444187693F800C1B091 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
 		700520E1186B1796006AAD8B /* UIs */ = {
 			isa = PBXGroup;
 			children = (
 				700520E9186B1FAB006AAD8B /* LeftMenuViewController.h */,
 				700520EA186B1FAB006AAD8B /* LeftMenuViewController.m */,
+				300FF4381876828700C1B091 /* LeftMenuCell.h */,
+				300FF4391876828700C1B091 /* LeftMenuCell.m */,
+				300FF43B1876883600C1B091 /* LeftHeaderView.h */,
+				300FF43C1876883600C1B091 /* LeftHeaderView.m */,
+				300FF43E1876884400C1B091 /* LeftFooterView.h */,
+				300FF43F1876884400C1B091 /* LeftFooterView.m */,
 				700520EF186B2AAC006AAD8B /* Home */,
 				700520F0186B2AAC006AAD8B /* Message */,
 				700520F1186B2AAC006AAD8B /* Mine */,
@@ -163,6 +201,7 @@
 		70377907186885E200011066 /* Classses */ = {
 			isa = PBXGroup;
 			children = (
+				300FF436187650E200C1B091 /* Public */,
 				700520E1186B1796006AAD8B /* UIs */,
 				703779181868863600011066 /* 3rd */,
 			);
@@ -249,6 +288,9 @@
 				7068FF2818672964000A9CFC /* InfoPlist.strings */,
 				7068FF2B18672964000A9CFC /* main.m */,
 				7068FF2D18672964000A9CFC /* LaoYueWeiBo-Prefix.pch */,
+				300FF4451876A38D00C1B091 /* Default-568h@2x.png */,
+				300FF4461876A38D00C1B091 /* Default.png */,
+				300FF4471876A38D00C1B091 /* Default@2x.png */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -329,7 +371,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				300FF44A1876A38D00C1B091 /* Default@2x.png in Resources */,
 				7068FF2A18672964000A9CFC /* InfoPlist.strings in Resources */,
+				300FF4491876A38D00C1B091 /* Default.png in Resources */,
+				300FF4481876A38D00C1B091 /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -353,11 +398,14 @@
 				703779231868863600011066 /* MMDrawerBarButtonItem.m in Sources */,
 				703779261868863600011066 /* UIViewController+MMDrawerController.m in Sources */,
 				700520EB186B1FAB006AAD8B /* LeftMenuViewController.m in Sources */,
+				300FF4401876884400C1B091 /* LeftFooterView.m in Sources */,
 				703779241868863600011066 /* MMDrawerController.m in Sources */,
 				700520F9186B2AFB006AAD8B /* MessageViewController.m in Sources */,
 				700520FC186B2B04006AAD8B /* MineViewController.m in Sources */,
+				300FF43A1876828700C1B091 /* LeftMenuCell.m in Sources */,
 				700520FF186B2B16006AAD8B /* SquareViewController.m in Sources */,
 				7068FF3018672964000A9CFC /* LYAppDelegate.m in Sources */,
+				300FF43D1876883600C1B091 /* LeftHeaderView.m in Sources */,
 				700520F6186B2AEE006AAD8B /* HomeViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
