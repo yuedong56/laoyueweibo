@@ -11,6 +11,11 @@
 
 #import "LYAppDelegate.h"
 
+//新浪
+#define AppKey @"1101937554"
+#define AppSecret @"083a3177e4f1819fb696444f012d8791"
+#define RedirectUri @"http://"
+
 //LYAppDelegate
 #define APP_DELEGATE ((LYAppDelegate *)[[UIApplication sharedApplication] delegate])
 //左侧抽屉结构的宽度

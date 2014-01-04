@@ -44,13 +44,50 @@
     self.window.rootViewController = self.drawerController;
 }
 
+/*
+ 初始化登录界面
+ */
+- (void)initLoginViewController
+{
+    LogInViewController *loginVC = [LogInViewController new];
+    loginVC.delegate = self;
+    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:loginVC];
+    self.window.rootViewController = nav;
+}
+
+
+#pragma mark - ProgressHUD
+
+- (void)showProgressHUDWithText:(NSString *)text
+{
+    self.progressHUD = [[MBProgressHUD alloc] initWithWindow:self.window];
+    self.progressHUD.labelText = text;
+    [self.window addSubview:self.progressHUD];
+    [self.progressHUD show:YES];
+}
+
+- (void)hideProgressHUDWithText:(NSString *)text
+{
+    [self.progressHUD hide:YES];
+    [self.progressHUD removeFromSuperview];
+    self.progressHUD = nil;
+}
+
+#pragma mark - LoginVC Delegate
+
+- (void)loginViewController:(LogInViewController *)loginVC didLoginSuccessWithCode:(NSString *)code
+{
+    [self initDrawerController];
+}
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     
-    [self initDrawerController];
+//    [self initDrawerController];
+    [self initLoginViewController];
     
     return YES;
 }

@@ -9,12 +9,20 @@
 #import <UIKit/UIKit.h>
 #import "MMDrawerController.h"
 #import "LeftMenuViewController.h"
+#import "LogInViewController.h"
+#import "MBProgressHUD.h"
 
-@interface LYAppDelegate : UIResponder <UIApplicationDelegate>
+@interface LYAppDelegate : UIResponder <UIApplicationDelegate,LoginVCDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 
 @property (strong, nonatomic) MMDrawerController *drawerController;
 @property (strong, nonatomic) LeftMenuViewController *leftMenuVC;
 @property (strong, nonatomic) UITabBarController *tabBarController;
+
+@property (nonatomic, strong) MBProgressHUD *progressHUD;
+
+- (void)showProgressHUDWithText:(NSString *)text;
+- (void)hideProgressHUDWithText:(NSString *)text;
+
 @end
