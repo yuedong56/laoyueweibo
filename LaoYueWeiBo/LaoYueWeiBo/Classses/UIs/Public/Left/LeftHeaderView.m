@@ -15,13 +15,7 @@
     self = [super initWithFrame:frame];
     if (self) {
         //头像
-        float imageView_y = 0.0f;
-        if (IsIOS7AndLater) {
-            imageView_y = 35.0f;
-        } else {
-            imageView_y = 25.0f;
-        }
-        self.imageView = [[UIImageView alloc] initWithFrame:CGRectMake((LeftMenuWidth-HeaderImageWidth)/2, imageView_y, HeaderImageWidth, HeaderImageWidth)];
+        self.imageView = [[UIImageView alloc] initWithFrame:CGRectMake((LeftMenuWidth-HeaderImageWidth)/2, IsIOS7AndLater?35:25, HeaderImageWidth, HeaderImageWidth)];
         self.imageView.backgroundColor = BlackColor;
         self.imageView.layer.cornerRadius = HeaderImageWidth/2;
         [self addSubview:self.imageView];

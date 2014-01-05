@@ -26,6 +26,7 @@
 		703779251868863600011066 /* MMDrawerVisualState.m in Sources */ = {isa = PBXBuildFile; fileRef = 703779201868863600011066 /* MMDrawerVisualState.m */; };
 		703779261868863600011066 /* UIViewController+MMDrawerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 703779221868863600011066 /* UIViewController+MMDrawerController.m */; };
 		703779281868864900011066 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 703779271868864900011066 /* QuartzCore.framework */; };
+		705FA3EE1879AC5F00338887 /* GeneralUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 705FA3ED1879AC5F00338887 /* GeneralUtils.m */; };
 		7068FF2018672964000A9CFC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7068FF1F18672964000A9CFC /* Foundation.framework */; };
 		7068FF2218672964000A9CFC /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7068FF2118672964000A9CFC /* CoreGraphics.framework */; };
 		7068FF2418672964000A9CFC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7068FF2318672964000A9CFC /* UIKit.framework */; };
@@ -84,6 +85,8 @@
 		703779211868863600011066 /* UIViewController+MMDrawerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+MMDrawerController.h"; sourceTree = "<group>"; };
 		703779221868863600011066 /* UIViewController+MMDrawerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+MMDrawerController.m"; sourceTree = "<group>"; };
 		703779271868864900011066 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		705FA3EC1879AC5F00338887 /* GeneralUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GeneralUtils.h; sourceTree = "<group>"; };
+		705FA3ED1879AC5F00338887 /* GeneralUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GeneralUtils.m; sourceTree = "<group>"; };
 		7068FF1C18672964000A9CFC /* LaoYueWeiBo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LaoYueWeiBo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7068FF1F18672964000A9CFC /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		7068FF2118672964000A9CFC /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -127,6 +130,8 @@
 			isa = PBXGroup;
 			children = (
 				300FF437187650F500C1B091 /* GlobalConfig.h */,
+				705FA3EC1879AC5F00338887 /* GeneralUtils.h */,
+				705FA3ED1879AC5F00338887 /* GeneralUtils.m */,
 				300FF444187693F800C1B091 /* Category */,
 			);
 			path = Public;
@@ -440,6 +445,7 @@
 				700520FC186B2B04006AAD8B /* MineViewController.m in Sources */,
 				701C3AE118785D0D002609BC /* MBProgressHUD.m in Sources */,
 				700520FF186B2B16006AAD8B /* SquareViewController.m in Sources */,
+				705FA3EE1879AC5F00338887 /* GeneralUtils.m in Sources */,
 				7068FF3018672964000A9CFC /* LYAppDelegate.m in Sources */,
 				701C3AD61878528B002609BC /* LeftMenuViewController.m in Sources */,
 				700520F6186B2AEE006AAD8B /* HomeViewController.m in Sources */,
