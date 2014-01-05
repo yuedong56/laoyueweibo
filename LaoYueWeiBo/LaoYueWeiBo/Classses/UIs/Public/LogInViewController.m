@@ -47,6 +47,9 @@
 - (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType
 {
     CLog(@"%s",__FUNCTION__);
+    if (!APP_DELEGATE.progressHUD) {
+        [APP_DELEGATE showProgressHUDWithText:nil];
+    }
     NSString *str = [[request URL] absoluteString];
     NSRange range = [str rangeOfString:@"?code="];
     if(range.location != NSNotFound)
@@ -73,6 +76,7 @@
 - (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error
 {
     CLog(@"%s",__FUNCTION__);
+    [APP_DELEGATE hideProgressHUDWithText:nil];
 }
 
 @end
