@@ -26,9 +26,9 @@
 #define ScreenWidth [UIScreen mainScreen].bounds.size.width
 #define ScreenHeight [UIScreen mainScreen].bounds.size.height
 
-#define IsiPhone5 ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(640, 1136), [[UIScreen mainScreen] currentMode].size) : NO)
-#define IsIOS7AndLater (([[[UIDevice currentDevice] systemVersion] floatValue] >= 7) ? YES : NO)
-#define IsPad (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
+#define IPhone5 ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(640, 1136), [[UIScreen mainScreen] currentMode].size) : NO)
+#define IOS7AndLater (([[[UIDevice currentDevice] systemVersion] floatValue] >= 7) ? YES : NO)
+#define IPad (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
 
 //颜色
 #define COLOR_RGBA(R, G, B, A) [UIColor colorWithRed:R/255.0 green:G/255.0 blue:B/255.0 alpha:A]
@@ -38,13 +38,13 @@
 
 #define ClearColor [UIColor clearColor]              //透明色
 #define WhiteColor [UIColor whiteColor]              //白色
-#define BlackColor [UIColor blackColor]              //黑
+#define BlackColor [UIColor blackColor]              //黑色
 #define GrayColor [UIColor grayColor]                //灰色
-#define LightGrayColor [UIColor lightGrayColor]     //浅灰色
-#define DarkGrayColor [UIColor darkGrayColor]     //深灰色
+#define LightGrayColor [UIColor lightGrayColor]      //浅灰色
+#define DarkGrayColor [UIColor darkGrayColor]        //深灰色
 
 //图片
-#define ImageWithFile(name) ([UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:name ofType:@"png"]])
+#define ImageWithFile(name) ([UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:name ofType:nil]])
 #define ImageNamed(name) [UIImage imageNamed:[UIUtil imageName:name]]
 
 #endif

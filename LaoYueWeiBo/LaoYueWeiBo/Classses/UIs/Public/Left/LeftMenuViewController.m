@@ -27,7 +27,7 @@
 
 - (void)initMenuTableView
 {
-    self.menuTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, ScreenWidth, ScreenHeight-(IsIOS7AndLater?0:20)) style:UITableViewStylePlain];
+    self.menuTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, ScreenWidth, ScreenHeight-(IOS7AndLater?0:20)) style:UITableViewStylePlain];
     self.menuTableView.separatorColor = ClearColor;
     self.menuTableView.backgroundColor = ClearColor;
     self.menuTableView.delegate = self;

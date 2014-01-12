@@ -10,6 +10,7 @@
 #define LaoYueWeiBo_GlobalConfig_h
 
 #import "LYAppDelegate.h"
+#import "LYUtils.h"
 
 //新浪
 #define AppKey @"1101937554"

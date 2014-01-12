@@ -8,16 +8,39 @@
 
 #import "LogInViewController.h"
 
+@interface LogInViewController()
+{
+    UIImageView *wifiImageView;
+    UILabel *label;
+    UIButton *refreshButton;
+}
+@end
+
 @implementation LogInViewController
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	
+    [self addNavBarView];
+    if (IOS7AndLater) {
+        self.automaticallyAdjustsScrollViewInsets = NO;
+    }
+    
+    if ([LYUtils checkNetworkAvailable]) {
+        [self addLogInWebView];
+    } else {
+        [self addNetworkUnavailableViews];
+    }
+}
+
+//导航栏
+- (void)addNavBarView
+{
     //导航栏
-    UIView *navBgView = [[UIView alloc] initWithFrame:CGRectMake(0, IsIOS7AndLater?-20:0, ScreenWidth, IsIOS7AndLater?64:44)];
+    UIView *navBgView = [[UIView alloc] initWithFrame:CGRectMake(0, IOS7AndLater?-20:0, ScreenWidth, IOS7AndLater?64:44)];
     navBgView.backgroundColor = GrayColor;
-    navBgView.alpha = IsIOS7AndLater?0.5:1;
+    navBgView.alpha = IOS7AndLater?0.5:1;
     [self.navigationController.navigationBar addSubview:navBgView];
     
     //导航栏标题
@@ -28,34 +51,92 @@
     titleLabel.text = @"登录";
     titleLabel.font = [UIFont boldSystemFontOfSize:20];
     [self.navigationController.navigationBar addSubview:titleLabel];
-    
+}
+
+
+//登录界面网页
+- (void)addLogInWebView
+{
+    [APP_DELEGATE showProgressHUDWithText:nil];
     //webView
-    self.loginWebView = [[UIWebView alloc] initWithFrame:CGRectMake(0, 0, ScreenWidth, ScreenHeight-(IsIOS7AndLater?0:64))];
+    self.loginWebView = [[UIWebView alloc] initWithFrame:CGRectMake(0, IOS7AndLater?64:0, ScreenWidth, ScreenHeight-(IOS7AndLater?64:64))];
     self.loginWebView.delegate = self;
     [self.view addSubview:self.loginWebView];
     
     NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"https://api.weibo.com/oauth2/authorize?client_id=%@&redirect_uri=%@",AppKey,RedirectUri]];
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     [self.loginWebView loadRequest:request];
+}
+
+//无网时的界面
+- (void)addNetworkUnavailableViews
+{
+    float image_width = 200;
+    float image_height = 89;
+    wifiImageView = [[UIImageView alloc] initWithFrame:CGRectMake((ScreenWidth-image_width)/2, IOS7AndLater?100:35, image_width, image_height)];
+    wifiImageView.image = ImageWithFile(@"wifi.png");
+    wifiImageView.backgroundColor = [UIColor redColor];
+    [self.view addSubview:wifiImageView];
     
-    //
-    [APP_DELEGATE showProgressHUDWithText:nil];
+    float label_width = 250;
+    float label_height = 50;
+    label = [[UILabel alloc] initWithFrame:CGRectMake((ScreenWidth-label_width)/2, wifiImageView.frame.origin.y+image_height+20, label_width, label_height)];
+    label.text = @"无法连接到网络，请重试！";
+    label.font = [UIFont boldSystemFontOfSize:20];
+    label.textColor = LightGrayColor;
+    label.textAlignment = NSTextAlignmentCenter;
+    [self.view addSubview:label];
+    
+    float button_width = 100;
+    float button_height = 35;
+    refreshButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    refreshButton.frame = CGRectMake((ScreenWidth-button_width)/2, label.frame.origin.y+label_height+20, button_width, button_height);
+    refreshButton.layer.cornerRadius = 8;
+    refreshButton.backgroundColor = LightGrayColor;
+    [refreshButton setTitle:@"重  试" forState:UIControlStateNormal];
+    [refreshButton setTitleColor:WhiteColor forState:UIControlStateNormal];
+    [refreshButton setTitleColor:GrayColor forState:UIControlStateHighlighted];
+    [refreshButton addTarget:self action:@selector(refreshButtonPress:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:refreshButton];
+}
+
+- (void)removeOtherViews
+{
+    [wifiImageView removeFromSuperview];
+    wifiImageView = nil;
+    
+    [label removeFromSuperview];
+    label = nil;
+    
+    [refreshButton removeFromSuperview];
+    refreshButton = nil;
+}
+
+#pragma mark - Button Events
+
+- (void)refreshButtonPress:(UIButton *)button
+{
+    if ([LYUtils checkNetworkAvailable]) {
+        [self removeOtherViews];
+        [self addLogInWebView];
+    } else {
+        [[[UIAlertView alloc] initWithTitle:nil
+                                    message:@"请检查您的网络设置后再重试！"
+                                   delegate:nil
+                          cancelButtonTitle:nil
+                          otherButtonTitles:@"确定", nil] show];
+    }
 }
 
 #pragma mark - UIWebView Delegate
 
 - (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType
 {
-    CLog(@"%s",__FUNCTION__);
-    if (!APP_DELEGATE.progressHUD) {
-        [APP_DELEGATE showProgressHUDWithText:nil];
-    }
     NSString *str = [[request URL] absoluteString];
     NSRange range = [str rangeOfString:@"?code="];
     if(range.location != NSNotFound)
     {
         NSString *code = [str substringFromIndex:range.location + 6];
-        CLog(@"str ===== %@ , code ==== %@",str,code);
         [self.delegate loginViewController:self didLoginSuccessWithCode:code];
         return  NO;
     }
@@ -64,18 +145,16 @@
 
 - (void)webViewDidStartLoad:(UIWebView *)webView
 {
-    CLog(@"%s",__FUNCTION__);
+    
 }
 
 - (void)webViewDidFinishLoad:(UIWebView *)webView
 {
-    CLog(@"%s",__FUNCTION__);
     [APP_DELEGATE hideProgressHUDWithText:nil];
 }
 
 - (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error
 {
-    CLog(@"%s",__FUNCTION__);
     [APP_DELEGATE hideProgressHUDWithText:nil];
 }
 

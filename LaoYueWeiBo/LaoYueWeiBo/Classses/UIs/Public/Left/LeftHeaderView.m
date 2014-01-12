@@ -16,7 +16,7 @@
     if (self) {
         
         //头像
-        self.imageView = [[UIImageView alloc] initWithFrame:CGRectMake((LeftMenuWidth-HeaderImageWidth)/2, IsIOS7AndLater?35:25, HeaderImageWidth, HeaderImageWidth)];
+        self.imageView = [[UIImageView alloc] initWithFrame:CGRectMake((LeftMenuWidth-HeaderImageWidth)/2, IOS7AndLater?35:25, HeaderImageWidth, HeaderImageWidth)];
         self.imageView.backgroundColor = BlackColor;
         self.imageView.layer.cornerRadius = HeaderImageWidth/2;
         [self addSubview:self.imageView];
