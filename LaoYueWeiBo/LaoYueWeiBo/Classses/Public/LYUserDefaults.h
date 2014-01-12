@@ -12,6 +12,6 @@
 @interface LYUserDefaults : NSObject
 
 //用户code
-- (void)save
+//- (void)save
 
 @end
