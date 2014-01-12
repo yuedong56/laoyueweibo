@@ -6,10 +6,10 @@
 //  Copyright (c) 2014年 LYue. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "BaseViewController.h"
 
 @protocol LoginVCDelegate;
-@interface LogInViewController : UIViewController<UIWebViewDelegate>
+@interface LogInViewController : BaseViewController<UIWebViewDelegate>
 
 @property (nonatomic, strong) UIWebView *loginWebView;
 @property (nonatomic, weak) id<LoginVCDelegate>delegate;

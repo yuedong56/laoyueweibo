@@ -12,6 +12,7 @@
 #import "MineViewController.h"
 #import "SquareViewController.h"
 #import "MoreViewController.h"
+#import "EditViewController.h"
 
 @implementation LYAppDelegate
 
@@ -34,10 +35,16 @@
     
     self.tabBarController.viewControllers = [NSArray arrayWithObjects:homeNav,messageNav,mineNav,sqareNav,moreNav, nil];
     
+    //右侧写微博
+    UINavigationController *rightEditNav = [[UINavigationController alloc] initWithRootViewController:[EditViewController new]];
+    
     //抽屉结构
-    self.drawerController = [[MMDrawerController alloc] initWithCenterViewController:self.tabBarController leftDrawerViewController:self.leftMenuVC];
+    self.drawerController = [[MMDrawerController alloc] initWithCenterViewController:self.tabBarController
+                                                            leftDrawerViewController:self.leftMenuVC
+                                                           rightDrawerViewController:rightEditNav];
     
     [self.drawerController setMaximumLeftDrawerWidth:LeftMenuWidth];
+    [self.drawerController setMaximumRightDrawerWidth:RightEditWidth];
     [self.drawerController setOpenDrawerGestureModeMask:MMOpenDrawerGestureModeAll];
     [self.drawerController setCloseDrawerGestureModeMask:MMCloseDrawerGestureModeAll];
     

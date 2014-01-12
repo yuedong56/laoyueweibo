@@ -22,7 +22,8 @@
 {
     [super viewDidLoad];
 	
-    [self addNavBarView];
+    [self setNavBarView];
+    
     if (IOS7AndLater) {
         self.automaticallyAdjustsScrollViewInsets = NO;
     }
@@ -34,23 +35,10 @@
     }
 }
 
-//导航栏
-- (void)addNavBarView
+//设置导航栏
+- (void)setNavBarView
 {
-    //导航栏
-    UIView *navBgView = [[UIView alloc] initWithFrame:CGRectMake(0, IOS7AndLater?-20:0, ScreenWidth, IOS7AndLater?64:44)];
-    navBgView.backgroundColor = GrayColor;
-    navBgView.alpha = IOS7AndLater?0.5:1;
-    [self.navigationController.navigationBar addSubview:navBgView];
-    
-    //导航栏标题
-    UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, ScreenWidth, 44)];
-    titleLabel.backgroundColor = ClearColor;
-    titleLabel.textColor = WhiteColor;
-    titleLabel.textAlignment = NSTextAlignmentCenter;
-    titleLabel.text = @"登录";
-    titleLabel.font = [UIFont boldSystemFontOfSize:20];
-    [self.navigationController.navigationBar addSubview:titleLabel];
+    self.titleLabel.text = @"登录";
 }
 
 
