@@ -125,7 +125,7 @@
     if(range.location != NSNotFound)
     {
         NSString *code = [str substringFromIndex:range.location + 6];
-        [self.delegate loginViewController:self didLoginSuccessWithCode:code];
+//        [self.delegate loginViewController:self didLoginSuccessWithCode:code];
         return  NO;
     }
     return YES;

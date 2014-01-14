@@ -8,7 +8,6 @@
 //  常用公共方法
 
 #import <Foundation/Foundation.h>
-#import "Reachability.h"
 
 @interface LYUtils : NSObject
 

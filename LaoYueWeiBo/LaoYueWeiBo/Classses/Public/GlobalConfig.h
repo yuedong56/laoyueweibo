@@ -9,6 +9,8 @@
 #ifndef LaoYueWeiBo_GlobalConfig_h
 #define LaoYueWeiBo_GlobalConfig_h
 
+#import "Reachability.h"
+
 #import "LYAppDelegate.h"
 #import "LYUtils.h"
 #import "LYUserDefaults.h"
