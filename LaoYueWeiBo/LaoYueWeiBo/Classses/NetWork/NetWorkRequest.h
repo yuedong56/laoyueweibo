@@ -14,4 +14,10 @@
 
 @property (nonatomic, strong) ASIHTTPRequest *currentRequest;
 
+/**
+ * 
+ */
++ (void)requestAccessTokenWithAuthorizeCode:(NSString *)authorizeCode
+                                      block:(void(^)(NSString *jsonString, NSError *error))block;
+
 @end
