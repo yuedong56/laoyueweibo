@@ -82,7 +82,7 @@
 
 #pragma mark - LoginVC Delegate
 
-- (void)loginViewController:(LogInViewController *)loginVC didLoginSuccessWithCode:(NSString *)code
+- (void)loginViewControllerDidLoginSuccess:(LogInViewController *)loginVC
 {
     [self initDrawerController];
 }
@@ -93,8 +93,16 @@
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     
-//    [self initDrawerController];
-    [self initLoginViewController];
+    
+    if ([LYUserDefaults getAccessToken])
+    {
+        [self initDrawerController];
+        //缺个接口，检查 AccessToken 是否过期
+    }
+    else
+    {
+        [self initLoginViewController];
+    }
     
     return YES;
 }

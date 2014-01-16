@@ -20,6 +20,6 @@
 
 @protocol LoginVCDelegate <NSObject>
 
-- (void)loginViewController:(LogInViewController *)loginVC didLoginSuccessWithCode:(NSString *)code;
+- (void)loginViewControllerDidLoginSuccess:(LogInViewController *)loginVC;
 
 @end

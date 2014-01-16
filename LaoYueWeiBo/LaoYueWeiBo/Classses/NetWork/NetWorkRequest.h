@@ -12,10 +12,9 @@
 
 @interface NetWorkRequest : NSObject
 
-@property (nonatomic, strong) ASIHTTPRequest *currentRequest;
-
 /**
- * 
+ * @brief 获取授权过的 Access_Token、uid
+ * @param authorizeCode 登录页面返回的code
  */
 + (void)requestAccessTokenWithAuthorizeCode:(NSString *)authorizeCode
                                       block:(void(^)(NSString *jsonString, NSError *error))block;

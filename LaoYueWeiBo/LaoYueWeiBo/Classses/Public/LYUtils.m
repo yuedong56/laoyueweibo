@@ -10,8 +10,10 @@
 
 @implementation LYUtils
 
-#pragma 网络检查
-//检查网络是否可用
+#pragma mark - 网络检查
+/**
+ * @brief 检查网络是否可用
+ */
 + (BOOL)checkNetworkAvailable {
 	Reachability *reach = [Reachability reachabilityWithHostName:@"www.baidu.com"];
     NetworkStatus status = [reach currentReachabilityStatus];
@@ -23,7 +25,9 @@
     }
 }
 
-//检查网络状态类型（wifi、2G/3G）
+/**
+ * @brief 检查网络状态类型（wifi、2G/3G）
+ */
 + (NetworkStatus)checkNetworkStateType {
 	Reachability *reach = [Reachability reachabilityWithHostName:@"www.baidu.com"];
     NetworkStatus status = [reach currentReachabilityStatus];

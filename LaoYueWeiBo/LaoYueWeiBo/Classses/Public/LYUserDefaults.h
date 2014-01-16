@@ -9,9 +9,24 @@
 
 #import <Foundation/Foundation.h>
 
+
+#define Access_Token_Key @"Access_Token"
+#define UID_Key @"UID"
+
+
 @interface LYUserDefaults : NSObject
 
-//用户code
-//- (void)save
+#pragma mark - login（登录）
+/**
+ * @brief AccessToken
+ */
++ (void)saveAccessToken:(NSString *)access_token;
++ (NSString *)getAccessToken;
+
+/**
+ * @brief uid
+ */
++ (void)saveUID:(NSString *)uid;
++ (NSString *)getUID;
 
 @end

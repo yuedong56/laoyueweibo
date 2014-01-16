@@ -51,7 +51,7 @@
     self.loginWebView.delegate = self;
     [self.view addSubview:self.loginWebView];
     
-    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"https://api.weibo.com/oauth2/authorize?client_id=%@&redirect_uri=%@",AppKey,RedirectUri]];
+    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"https://api.weibo.com/oauth2/authorize?client_id=%@&display=mobile&redirect_uri=%@",AppKey,RedirectUri]];
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     [self.loginWebView loadRequest:request];
 }
@@ -125,7 +125,23 @@
     if(range.location != NSNotFound)
     {
         NSString *code = [str substringFromIndex:range.location + 6];
-//        [self.delegate loginViewController:self didLoginSuccessWithCode:code];
+        
+        [NetWorkRequest requestAccessTokenWithAuthorizeCode:code
+                                                      block:^(NSString *jsonString, NSError *error)
+         {
+            CLog(@"login_jsonString ==== %@",jsonString);
+            if (jsonString)
+            {
+                NSData *jsonData = [jsonString dataUsingEncoding:NSUTF8StringEncoding];
+                NSDictionary *jsonDic = [NSJSONSerialization JSONObjectWithData:jsonData
+                                                                     options:kNilOptions
+                                                                       error:&error];
+                [LYUserDefaults saveAccessToken:[jsonDic valueForKey:@"access_token"]];
+                [LYUserDefaults saveUID:[jsonDic valueForKey:@"uid"]];
+                
+                [self.delegate loginViewControllerDidLoginSuccess:self];
+            }
+        }];
         return  NO;
     }
     return YES;

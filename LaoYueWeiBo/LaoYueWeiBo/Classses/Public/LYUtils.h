@@ -13,10 +13,14 @@
 
 #pragma 网络检查
 
-// 检查网络是否可用
+/** 
+ * @brief 检查网络是否可用
+ */
 + (BOOL)checkNetworkAvailable;
 
-// 检查网络状态类型（wifi、2G/3G）
+/**
+ * @brief 检查网络状态类型（wifi、2G/3G）
+ */
 + (NetworkStatus)checkNetworkStateType;
 
 @end
