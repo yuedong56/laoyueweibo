@@ -8,8 +8,7 @@
 
 #import "LeftMenuViewController.h"
 #import "LeftMenuCell.h"
-#import "LeftHeaderView.h"
-#import "LeftFooterView.h"
+#import "UIImageView+WebCache.h"
 
 @implementation LeftMenuViewController
 
@@ -35,14 +34,21 @@
     [self.view addSubview:self.menuTableView];
     
     //headerView
-    LeftHeaderView *headerView = [[LeftHeaderView alloc] initWithFrame:CGRectMake(0, 0, LeftMenuWidth, HeaderViewHeigth)];
-    headerView.backgroundColor = LightGrayColor;
-    self.menuTableView.tableHeaderView = headerView;
+    self.headerView = [[LeftHeaderView alloc] initWithFrame:CGRectMake(0, 0, LeftMenuWidth, HeaderViewHeigth)];
+    self.headerView.backgroundColor = LightGrayColor;
+    self.menuTableView.tableHeaderView = self.headerView;
     
     //footerView
-    LeftFooterView *footerView = [[LeftFooterView alloc] initWithFrame:CGRectMake(0, 0, LeftMenuWidth, FooterViewHeigth)];
-    footerView.backgroundColor = LightGrayColor;
-    self.menuTableView.tableFooterView = footerView;
+    self.footerView = [[LeftFooterView alloc] initWithFrame:CGRectMake(0, 0, LeftMenuWidth, FooterViewHeigth)];
+    self.footerView.backgroundColor = LightGrayColor;
+    self.menuTableView.tableFooterView = self.footerView;
+}
+
+- (void)setHeaderContentWithUserInfo:(UserInfo *)userInfo
+{
+    [self.headerView.imageView setImageWithURL:[NSURL URLWithString:userInfo.profile_image_url]
+                              placeholderImage:nil];
+    self.headerView.titleLabel.text = userInfo.screen_name;
 }
 
 #pragma mark - UITableView dataSource

@@ -127,15 +127,11 @@
         NSString *code = [str substringFromIndex:range.location + 6];
         
         [NetWorkRequest requestAccessTokenWithAuthorizeCode:code
-                                                      block:^(NSString *jsonString, NSError *error)
-         {
-            CLog(@"login_jsonString ==== %@",jsonString);
-            if (jsonString)
+                                                      block:^(NSDictionary *jsonDic, NSError *error)
+        {
+            CLog(@"login_jsonDic ==== %@",jsonDic);
+            if (jsonDic)
             {
-                NSData *jsonData = [jsonString dataUsingEncoding:NSUTF8StringEncoding];
-                NSDictionary *jsonDic = [NSJSONSerialization JSONObjectWithData:jsonData
-                                                                     options:kNilOptions
-                                                                       error:&error];
                 [LYUserDefaults saveAccessToken:[jsonDic valueForKey:@"access_token"]];
                 [LYUserDefaults saveUID:[jsonDic valueForKey:@"uid"]];
                 
