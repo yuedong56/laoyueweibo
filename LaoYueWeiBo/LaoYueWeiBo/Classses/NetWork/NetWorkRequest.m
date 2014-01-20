@@ -102,7 +102,7 @@
         return;
     }
     NSString *accessToken = [LYUserDefaults getAccessToken];
-    NSString *urlStr = [NSString stringWithFormat:@"https://api.weibo.com/2/users/show.json?access_token=%@&uid=%d",accessToken,[uid integerValue]];
+    NSString *urlStr = [NSString stringWithFormat:@"https://api.weibo.com/2/users/show.json?access_token=%@&uid=%d",accessToken,[uid intValue]];
     [self startGetRequestWithURL:urlStr
                       requestKey:nil
                            block:^(NSDictionary *jsonDic, NSError *error)

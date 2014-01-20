@@ -16,7 +16,7 @@
 
 @implementation LYAppDelegate
 
-/*
+/**
  初始化抽屉结构
  */
 - (void)initDrawerController
@@ -51,7 +51,7 @@
     self.window.rootViewController = self.drawerController;
 }
 
-/*
+/**
  初始化登录界面
  */
 - (void)initLoginViewController

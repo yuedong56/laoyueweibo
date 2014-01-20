@@ -25,6 +25,6 @@
 #define APP_DELEGATE ((LYAppDelegate *)[[UIApplication sharedApplication] delegate])
 //左侧抽屉结构的宽度
 #define LeftMenuWidth 220.0f
-#define RightEditWidth 320.0f
+#define RightEditWidth 312.0f
 
 #endif

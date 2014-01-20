@@ -11,4 +11,6 @@
 
 @interface EditViewController : BaseViewController
 
+@property (nonatomic, strong) UITextView *weiboTextView;
+
 @end

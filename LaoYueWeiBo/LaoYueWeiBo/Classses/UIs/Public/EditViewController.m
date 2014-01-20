@@ -20,12 +20,31 @@
     self.view.backgroundColor = WhiteColor;
     
     [self setNavBarView];
+    [self addWeiboTextView];
+    
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [_weiboTextView performSelector:@selector(becomeFirstResponder) withObject:nil afterDelay:0.0f];
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [_weiboTextView resignFirstResponder];
 }
 
 //设置导航栏
 - (void)setNavBarView
 {
     self.titleLabel.text = @"写微博";
+}
+
+- (void)addWeiboTextView
+{
+    _weiboTextView = [[UITextView alloc] initWithFrame:CGRectMake(20, IOS7AndLater?74:10, 280, 50)];
+    _weiboTextView.backgroundColor = GrayColor;
+    [self.view addSubview:_weiboTextView];
 }
 
 @end
