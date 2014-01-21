@@ -8,9 +8,11 @@
 //  写微博界面
 
 #import "BaseViewController.h"
+#import "KeyBoardHeaderView.h"
 
 @interface EditViewController : BaseViewController
 
 @property (nonatomic, strong) UITextView *weiboTextView;
+@property (nonatomic, strong) KeyBoardHeaderView *kbHeaderView;
 
 @end

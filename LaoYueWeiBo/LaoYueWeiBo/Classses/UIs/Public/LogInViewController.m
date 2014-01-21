@@ -24,10 +24,6 @@
 	
     [self setNavBarView];
     
-    if (IOS7AndLater) {
-        self.automaticallyAdjustsScrollViewInsets = NO;
-    }
-    
     if ([LYUtils checkNetworkAvailable]) {
         [self addLogInWebView];
     } else {

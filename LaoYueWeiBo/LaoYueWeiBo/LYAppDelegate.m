@@ -13,6 +13,7 @@
 #import "SquareViewController.h"
 #import "MoreViewController.h"
 #import "EditViewController.h"
+#import "MMExampleDrawerVisualStateManager.h"
 
 @implementation LYAppDelegate
 
@@ -45,10 +46,22 @@
     
     [self.drawerController setMaximumLeftDrawerWidth:LeftMenuWidth];
     [self.drawerController setMaximumRightDrawerWidth:RightEditWidth];
+    [self.drawerController setDrawerVisualStateBlock:^(MMDrawerController *drawerController, MMDrawerSide drawerSide, CGFloat percentVisible) {
+        MMDrawerControllerDrawerVisualStateBlock block;
+        block = [[MMExampleDrawerVisualStateManager sharedManager]
+                 drawerVisualStateBlockForDrawerSide:drawerSide];
+        if(block){
+            block(drawerController, drawerSide, percentVisible);
+        }
+    }];
     [self.drawerController setOpenDrawerGestureModeMask:MMOpenDrawerGestureModeAll];
     [self.drawerController setCloseDrawerGestureModeMask:MMCloseDrawerGestureModeAll];
     
     self.window.rootViewController = self.drawerController;
+    
+    //抽屉特殊效果
+    [[MMExampleDrawerVisualStateManager sharedManager] setLeftDrawerAnimationType:MMDrawerAnimationTypeParallax];
+    [[MMExampleDrawerVisualStateManager sharedManager] setRightDrawerAnimationType:MMDrawerAnimationTypeSwingingDoor];
 }
 
 /**

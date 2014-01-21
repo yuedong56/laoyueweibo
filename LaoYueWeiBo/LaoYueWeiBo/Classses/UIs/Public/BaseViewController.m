@@ -24,6 +24,10 @@
 //导航栏
 - (void)addNavBarView
 {
+    if (IOS7AndLater) {
+        self.automaticallyAdjustsScrollViewInsets = NO;
+    }
+    
     //导航栏
     UIView *navBgView = [[UIView alloc] initWithFrame:CGRectMake(0, IOS7AndLater?-20:0, ScreenWidth, IOS7AndLater?64:44)];
     navBgView.backgroundColor = GrayColor;

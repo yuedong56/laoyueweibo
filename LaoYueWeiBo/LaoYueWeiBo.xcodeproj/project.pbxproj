@@ -22,6 +22,9 @@
 		300FF4481876A38D00C1B091 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 300FF4451876A38D00C1B091 /* Default-568h@2x.png */; };
 		300FF4491876A38D00C1B091 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 300FF4461876A38D00C1B091 /* Default.png */; };
 		300FF44A1876A38D00C1B091 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 300FF4471876A38D00C1B091 /* Default@2x.png */; };
+		301E82C9188E4B9600A73299 /* MMExampleDrawerVisualStateManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 301E82C8188E4B9600A73299 /* MMExampleDrawerVisualStateManager.m */; };
+		301E82CD188E75FE00A73299 /* EditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 301E82CC188E75FE00A73299 /* EditViewController.m */; };
+		301E82D0188E764800A73299 /* KeyBoardHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 301E82CF188E764800A73299 /* KeyBoardHeaderView.m */; };
 		30FADF0B1883F08600A7247A /* NetWorkRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 30FADF0A1883F08600A7247A /* NetWorkRequest.m */; };
 		700520F6186B2AEE006AAD8B /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 700520F5186B2AEE006AAD8B /* HomeViewController.m */; };
 		700520F9186B2AFB006AAD8B /* MessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 700520F8186B2AFB006AAD8B /* MessageViewController.m */; };
@@ -65,7 +68,6 @@
 		70770F3218825E5400AED8B1 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70770F3118825E5400AED8B1 /* MobileCoreServices.framework */; };
 		70770F3418825E5C00AED8B1 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70770F3318825E5C00AED8B1 /* CFNetwork.framework */; };
 		70770F5A1882821400AED8B1 /* wifi.png in Resources */ = {isa = PBXBuildFile; fileRef = 70770F591882821400AED8B1 /* wifi.png */; };
-		70770F5D1882D64700AED8B1 /* EditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 70770F5C1882D64700AED8B1 /* EditViewController.m */; };
 		70770F601882D8AD00AED8B1 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 70770F5F1882D8AD00AED8B1 /* BaseViewController.m */; };
 		70770F631882DEF600AED8B1 /* LYUserDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = 70770F621882DEF600AED8B1 /* LYUserDefaults.m */; };
 /* End PBXBuildFile section */
@@ -112,6 +114,12 @@
 		300FF4451876A38D00C1B091 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		300FF4461876A38D00C1B091 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		300FF4471876A38D00C1B091 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		301E82C7188E4B9600A73299 /* MMExampleDrawerVisualStateManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMExampleDrawerVisualStateManager.h; sourceTree = "<group>"; };
+		301E82C8188E4B9600A73299 /* MMExampleDrawerVisualStateManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMExampleDrawerVisualStateManager.m; sourceTree = "<group>"; };
+		301E82CB188E75FE00A73299 /* EditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditViewController.h; sourceTree = "<group>"; };
+		301E82CC188E75FE00A73299 /* EditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditViewController.m; sourceTree = "<group>"; };
+		301E82CE188E764800A73299 /* KeyBoardHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeyBoardHeaderView.h; sourceTree = "<group>"; };
+		301E82CF188E764800A73299 /* KeyBoardHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeyBoardHeaderView.m; sourceTree = "<group>"; };
 		30FADF091883F08600A7247A /* NetWorkRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetWorkRequest.h; sourceTree = "<group>"; };
 		30FADF0A1883F08600A7247A /* NetWorkRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetWorkRequest.m; sourceTree = "<group>"; };
 		700520F4186B2AEE006AAD8B /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
@@ -189,8 +197,6 @@
 		70770F3118825E5400AED8B1 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		70770F3318825E5C00AED8B1 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		70770F591882821400AED8B1 /* wifi.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wifi.png; sourceTree = "<group>"; };
-		70770F5B1882D64700AED8B1 /* EditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditViewController.h; sourceTree = "<group>"; };
-		70770F5C1882D64700AED8B1 /* EditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditViewController.m; sourceTree = "<group>"; };
 		70770F5E1882D8AD00AED8B1 /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
 		70770F5F1882D8AD00AED8B1 /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
 		70770F611882DEF600AED8B1 /* LYUserDefaults.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LYUserDefaults.h; sourceTree = "<group>"; };
@@ -289,6 +295,17 @@
 			path = Category;
 			sourceTree = "<group>";
 		};
+		301E82CA188E75FE00A73299 /* Edit */ = {
+			isa = PBXGroup;
+			children = (
+				301E82CB188E75FE00A73299 /* EditViewController.h */,
+				301E82CC188E75FE00A73299 /* EditViewController.m */,
+				301E82CE188E764800A73299 /* KeyBoardHeaderView.h */,
+				301E82CF188E764800A73299 /* KeyBoardHeaderView.m */,
+			);
+			path = Edit;
+			sourceTree = "<group>";
+		};
 		30FADF081883EFA600A7247A /* NetWork */ = {
 			isa = PBXGroup;
 			children = (
@@ -364,8 +381,7 @@
 				701C3ACA1878528B002609BC /* Left */,
 				701C3AD7187852C7002609BC /* LogInViewController.h */,
 				701C3AD8187852C7002609BC /* LogInViewController.m */,
-				70770F5B1882D64700AED8B1 /* EditViewController.h */,
-				70770F5C1882D64700AED8B1 /* EditViewController.m */,
+				301E82CA188E75FE00A73299 /* Edit */,
 			);
 			path = Public;
 			sourceTree = "<group>";
@@ -429,6 +445,8 @@
 				703779201868863600011066 /* MMDrawerVisualState.m */,
 				703779211868863600011066 /* UIViewController+MMDrawerController.h */,
 				703779221868863600011066 /* UIViewController+MMDrawerController.m */,
+				301E82C7188E4B9600A73299 /* MMExampleDrawerVisualStateManager.h */,
+				301E82C8188E4B9600A73299 /* MMExampleDrawerVisualStateManager.m */,
 			);
 			path = MMDrawerController;
 			sourceTree = "<group>";
@@ -655,8 +673,10 @@
 				701C3AD51878528B002609BC /* LeftMenuCell.m in Sources */,
 				701C3AD41878528B002609BC /* LeftHeaderView.m in Sources */,
 				703779251868863600011066 /* MMDrawerVisualState.m in Sources */,
+				301E82C9188E4B9600A73299 /* MMExampleDrawerVisualStateManager.m in Sources */,
 				70770F601882D8AD00AED8B1 /* BaseViewController.m in Sources */,
 				70052102186B2B21006AAD8B /* MoreViewController.m in Sources */,
+				301E82CD188E75FE00A73299 /* EditViewController.m in Sources */,
 				7068FF2C18672964000A9CFC /* main.m in Sources */,
 				703779231868863600011066 /* MMDrawerBarButtonItem.m in Sources */,
 				703779261868863600011066 /* UIViewController+MMDrawerController.m in Sources */,
@@ -674,6 +694,7 @@
 				70770F011882599A00AED8B1 /* ASIDataDecompressor.m in Sources */,
 				700520F9186B2AFB006AAD8B /* MessageViewController.m in Sources */,
 				700520FC186B2B04006AAD8B /* MineViewController.m in Sources */,
+				301E82D0188E764800A73299 /* KeyBoardHeaderView.m in Sources */,
 				701C3AE118785D0D002609BC /* MBProgressHUD.m in Sources */,
 				700520FF186B2B16006AAD8B /* SquareViewController.m in Sources */,
 				70770F041882599A00AED8B1 /* ASIHTTPRequest.m in Sources */,
@@ -682,7 +703,6 @@
 				70770EFF1882599A00AED8B1 /* ASIAuthenticationDialog.m in Sources */,
 				70770F021882599A00AED8B1 /* ASIDownloadCache.m in Sources */,
 				7068FF3018672964000A9CFC /* LYAppDelegate.m in Sources */,
-				70770F5D1882D64700AED8B1 /* EditViewController.m in Sources */,
 				701C3AD61878528B002609BC /* LeftMenuViewController.m in Sources */,
 				300E9836188910E00072175D /* MKAnnotationView+WebCache.m in Sources */,
 				70770F2818825C7C00AED8B1 /* Reachability.m in Sources */,
