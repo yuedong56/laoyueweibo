@@ -24,7 +24,8 @@
 		300FF44A1876A38D00C1B091 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 300FF4471876A38D00C1B091 /* Default@2x.png */; };
 		301E82C9188E4B9600A73299 /* MMExampleDrawerVisualStateManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 301E82C8188E4B9600A73299 /* MMExampleDrawerVisualStateManager.m */; };
 		301E82CD188E75FE00A73299 /* EditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 301E82CC188E75FE00A73299 /* EditViewController.m */; };
-		301E82D0188E764800A73299 /* KeyBoardHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 301E82CF188E764800A73299 /* KeyBoardHeaderView.m */; };
+		301E82D0188E764800A73299 /* KBHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 301E82CF188E764800A73299 /* KBHeaderView.m */; };
+		306E711B188FA3210011E374 /* UINavigationController+Rotate.m in Sources */ = {isa = PBXBuildFile; fileRef = 306E711A188FA3210011E374 /* UINavigationController+Rotate.m */; };
 		30FADF0B1883F08600A7247A /* NetWorkRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 30FADF0A1883F08600A7247A /* NetWorkRequest.m */; };
 		700520F6186B2AEE006AAD8B /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 700520F5186B2AEE006AAD8B /* HomeViewController.m */; };
 		700520F9186B2AFB006AAD8B /* MessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 700520F8186B2AFB006AAD8B /* MessageViewController.m */; };
@@ -118,8 +119,10 @@
 		301E82C8188E4B9600A73299 /* MMExampleDrawerVisualStateManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMExampleDrawerVisualStateManager.m; sourceTree = "<group>"; };
 		301E82CB188E75FE00A73299 /* EditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditViewController.h; sourceTree = "<group>"; };
 		301E82CC188E75FE00A73299 /* EditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditViewController.m; sourceTree = "<group>"; };
-		301E82CE188E764800A73299 /* KeyBoardHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeyBoardHeaderView.h; sourceTree = "<group>"; };
-		301E82CF188E764800A73299 /* KeyBoardHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeyBoardHeaderView.m; sourceTree = "<group>"; };
+		301E82CE188E764800A73299 /* KBHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KBHeaderView.h; sourceTree = "<group>"; };
+		301E82CF188E764800A73299 /* KBHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KBHeaderView.m; sourceTree = "<group>"; };
+		306E7119188FA3210011E374 /* UINavigationController+Rotate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+Rotate.h"; sourceTree = "<group>"; };
+		306E711A188FA3210011E374 /* UINavigationController+Rotate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+Rotate.m"; sourceTree = "<group>"; };
 		30FADF091883F08600A7247A /* NetWorkRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetWorkRequest.h; sourceTree = "<group>"; };
 		30FADF0A1883F08600A7247A /* NetWorkRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetWorkRequest.m; sourceTree = "<group>"; };
 		700520F4186B2AEE006AAD8B /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
@@ -300,10 +303,19 @@
 			children = (
 				301E82CB188E75FE00A73299 /* EditViewController.h */,
 				301E82CC188E75FE00A73299 /* EditViewController.m */,
-				301E82CE188E764800A73299 /* KeyBoardHeaderView.h */,
-				301E82CF188E764800A73299 /* KeyBoardHeaderView.m */,
+				301E82CE188E764800A73299 /* KBHeaderView.h */,
+				301E82CF188E764800A73299 /* KBHeaderView.m */,
 			);
 			path = Edit;
+			sourceTree = "<group>";
+		};
+		306E7118188FA2E70011E374 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				306E7119188FA3210011E374 /* UINavigationController+Rotate.h */,
+				306E711A188FA3210011E374 /* UINavigationController+Rotate.m */,
+			);
+			path = Category;
 			sourceTree = "<group>";
 		};
 		30FADF081883EFA600A7247A /* NetWork */ = {
@@ -376,6 +388,7 @@
 		701C3AC91878528B002609BC /* Public */ = {
 			isa = PBXGroup;
 			children = (
+				306E7118188FA2E70011E374 /* Category */,
 				70770F5E1882D8AD00AED8B1 /* BaseViewController.h */,
 				70770F5F1882D8AD00AED8B1 /* BaseViewController.m */,
 				701C3ACA1878528B002609BC /* Left */,
@@ -680,6 +693,7 @@
 				7068FF2C18672964000A9CFC /* main.m in Sources */,
 				703779231868863600011066 /* MMDrawerBarButtonItem.m in Sources */,
 				703779261868863600011066 /* UIViewController+MMDrawerController.m in Sources */,
+				306E711B188FA3210011E374 /* UINavigationController+Rotate.m in Sources */,
 				701C3AD9187852C7002609BC /* LogInViewController.m in Sources */,
 				300E9839188910E00072175D /* SDWebImageDownloader.m in Sources */,
 				70770F061882599A00AED8B1 /* ASINetworkQueue.m in Sources */,
@@ -694,7 +708,7 @@
 				70770F011882599A00AED8B1 /* ASIDataDecompressor.m in Sources */,
 				700520F9186B2AFB006AAD8B /* MessageViewController.m in Sources */,
 				700520FC186B2B04006AAD8B /* MineViewController.m in Sources */,
-				301E82D0188E764800A73299 /* KeyBoardHeaderView.m in Sources */,
+				301E82D0188E764800A73299 /* KBHeaderView.m in Sources */,
 				701C3AE118785D0D002609BC /* MBProgressHUD.m in Sources */,
 				700520FF186B2B16006AAD8B /* SquareViewController.m in Sources */,
 				70770F041882599A00AED8B1 /* ASIHTTPRequest.m in Sources */,

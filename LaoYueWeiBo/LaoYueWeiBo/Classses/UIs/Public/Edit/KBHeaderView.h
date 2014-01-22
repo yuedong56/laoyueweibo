@@ -1,5 +1,5 @@
 //
-//  KeyBoardHeaderView.h
+//  KBHeaderView.h
 //  LaoYueWeiBo
 //
 //  Created by 老岳 on 14-1-21.
@@ -11,7 +11,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface KeyBoardHeaderView : UIView
+@interface KBHeaderView : UIView
 
 
 

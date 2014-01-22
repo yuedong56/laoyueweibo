@@ -713,8 +713,24 @@ static NSString *MMDrawerOpenSideKey = @"MMDrawerOpenSide";
     }
 }
 
--(BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation{
-    return YES;
+#pragma mark - 屏幕旋转
+
+//ios5.X
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation
+{
+    return (toInterfaceOrientation == UIInterfaceOrientationPortrait);
+}
+
+//ios6.X and later
+- (BOOL)shouldAutorotate
+{
+    return NO;
+}
+
+//ios6.X and later
+- (NSUInteger)supportedInterfaceOrientations
+{
+    return UIInterfaceOrientationMaskPortrait;
 }
 
 -(void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation{
