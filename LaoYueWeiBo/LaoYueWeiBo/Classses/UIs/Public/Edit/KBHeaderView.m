@@ -16,7 +16,7 @@
     if (self)
     {
         [self initLocateButton];
-        
+        [self initWordsNumLabel];
     }
     return self;
 }
@@ -47,6 +47,19 @@
     [self.locateButton setTitleColor:GrayColor forState:UIControlStateHighlighted];
     [self.locateButton setTitle:buttonTitle forState:UIControlStateNormal];
     [self addSubview:self.locateButton];
+}
+
+//字数
+- (void)initWordsNumLabel
+{
+    self.wordsNumLabel = [[UILabel alloc] initWithFrame:CGRectMake(235, 8, 60, 20)];
+    self.wordsNumLabel.textColor = GrayColor;
+    self.wordsNumLabel.backgroundColor = LightGrayColor;
+    self.wordsNumLabel.font = [UIFont systemFontOfSize:13];
+    self.wordsNumLabel.textAlignment = NSTextAlignmentRight;
+    self.wordsNumLabel.text = @"140";
+    self.wordsNumLabel.backgroundColor = ClearColor;
+    [self addSubview:self.wordsNumLabel];
 }
 
 @end

@@ -69,7 +69,7 @@
 - (void)addKeyBoardHeaderView
 {
     _kbHeaderView = [[KBHeaderView alloc] initWithFrame:CGRectMake(0, ScreenHeight-KBHeaderView_Heigth-(IOS7AndLater?0:64), ScreenWidth, KBHeaderView_Heigth)];
-    _kbHeaderView.backgroundColor = GrayColor;
+    _kbHeaderView.backgroundColor = WhiteColor;
     [self.view addSubview:_kbHeaderView];
 }
 
