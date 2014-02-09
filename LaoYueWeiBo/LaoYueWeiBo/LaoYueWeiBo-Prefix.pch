@@ -42,6 +42,7 @@
 #define GrayColor [UIColor grayColor]                //灰色
 #define LightGrayColor [UIColor lightGrayColor]      //浅灰色
 #define DarkGrayColor [UIColor darkGrayColor]        //深灰色
+#define RedColor [UIColor redColor]
 
 //图片
 #define ImageWithFile(name) ([UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:name ofType:nil]])

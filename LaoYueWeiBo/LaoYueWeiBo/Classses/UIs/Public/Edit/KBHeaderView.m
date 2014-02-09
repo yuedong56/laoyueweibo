@@ -22,6 +22,7 @@
         [self initMentionButton];
         [self initTrendButton];
         [self initEmotionButton];
+        [self initDoneButton];
     }
     return self;
 }
@@ -67,8 +68,8 @@
     [self addSubview:self.wordsNumLabel];
 }
 
-static float gapWidth = 40.0f;
-static float photoButton_y = 20.0f;
+static float gapWidth = 35.0f;
+static float photoButton_y = 25.0f;
 //相机
 - (void)initPhotoButton
 {
@@ -103,6 +104,19 @@ static float photoButton_y = 20.0f;
     self.emotionButton.frame = CGRectMake(photoButton_y+(PhotoButton_Width+gapWidth)*3, KBHeaderView_Heigth/2 + (KBHeaderView_Heigth/2-PhotoButton_Width)/2, PhotoButton_Width, PhotoButton_Width);
     [self.emotionButton setBackgroundImage:ImageWithFile(@"edit_emoticonbutton_n.png") forState:UIControlStateNormal];
     [self addSubview:self.emotionButton];
+}
+
+//done
+- (void)initDoneButton
+{
+    float doneButton_Height = 40.0f;
+    float doneButton_Width = 82.0f;
+    self.doneButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    self.doneButton.frame = CGRectMake(ScreenWidth-doneButton_Width, 39, doneButton_Width, doneButton_Height);
+    [self.doneButton setTitle:@"done" forState:UIControlStateNormal];
+    [self.doneButton setTitleColor:GrayColor forState:UIControlStateNormal];
+    [self.doneButton setTitleColor:DarkGrayColor forState:UIControlStateHighlighted];
+    [self addSubview:self.doneButton];
 }
 
 @end

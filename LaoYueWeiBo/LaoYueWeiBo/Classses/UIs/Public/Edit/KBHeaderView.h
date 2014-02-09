@@ -22,5 +22,6 @@
 @property (nonatomic, strong) UIButton *mentionButton; //@
 @property (nonatomic, strong) UIButton *trendButton;   //#
 @property (nonatomic, strong) UIButton *emotionButton; //表情
+@property (nonatomic, strong) UIButton *doneButton;    //done
 
 @end

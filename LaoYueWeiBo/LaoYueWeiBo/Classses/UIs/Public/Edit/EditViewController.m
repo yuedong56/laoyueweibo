@@ -23,8 +23,10 @@
     self.view.backgroundColor = WhiteColor;
     
     [self setNavBarView];
-    [self addWeiboTextView];
-    [self addKeyBoardHeaderView];
+    [self initWeiboTextView];
+    [self initKeyBoardHeaderView];
+    
+    [self addTarget];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -57,7 +59,7 @@
 }
 
 //文本框
-- (void)addWeiboTextView
+- (void)initWeiboTextView
 {
     _weiboTextView = [[UITextView alloc] initWithFrame:CGRectMake(20, IOS7AndLater?74:10, WBTextView_Width, 0)];
     _weiboTextView.backgroundColor = LightGrayColor;
@@ -66,11 +68,49 @@
 }
 
 //键盘HeaderView
-- (void)addKeyBoardHeaderView
+- (void)initKeyBoardHeaderView
 {
     _kbHeaderView = [[KBHeaderView alloc] initWithFrame:CGRectMake(0, ScreenHeight-KBHeaderView_Heigth-(IOS7AndLater?0:64), ScreenWidth, KBHeaderView_Heigth)];
     _kbHeaderView.backgroundColor = WhiteColor;
     [self.view addSubview:_kbHeaderView];
+}
+
+//增加方法
+- (void)addTarget
+{
+    [_kbHeaderView.photoButton addTarget:self action:@selector(photoButtonPress:) forControlEvents:UIControlEventTouchUpInside];
+    [_kbHeaderView.mentionButton addTarget:self action:@selector(mentionButtonPress:) forControlEvents:UIControlEventTouchUpInside];
+    [_kbHeaderView.trendButton addTarget:self action:@selector(trendButtonPress:) forControlEvents:UIControlEventTouchUpInside];
+    [_kbHeaderView.emotionButton addTarget:self action:@selector(emotionButtonPress:) forControlEvents:UIControlEventTouchUpInside];
+    [_kbHeaderView.doneButton addTarget:self action:@selector(doneButtonPress:) forControlEvents:UIControlEventTouchUpInside];
+}
+
+#pragma mark - Button Events
+- (void)photoButtonPress:(UIButton *)button
+{
+    [self.weiboTextView resignFirstResponder];
+    UIActionSheet *actSheet = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:@"取消" destructiveButtonTitle:nil otherButtonTitles:@"照相机",@"相册", nil];
+    [actSheet showInView:self.view];
+}
+
+- (void)mentionButtonPress:(UIButton *)button
+{
+    
+}
+
+- (void)trendButtonPress:(UIButton *)button
+{
+    
+}
+
+- (void)emotionButtonPress:(UIButton *)button
+{
+    
+}
+
+- (void)doneButtonPress:(UIButton *)button
+{
+    [self.weiboTextView resignFirstResponder];
 }
 
 #pragma mark - KeyBoard Notificition
@@ -102,6 +142,12 @@
     _kbHeaderView.frame = CGRectMake(0, kbHeaderView_y, ScreenWidth, KBHeaderView_Heigth);
     float weiboTextView_y = IOS7AndLater?74:10;
     _weiboTextView.frame = CGRectMake(20, weiboTextView_y, WBTextView_Width, kbHeaderView_y-weiboTextView_y-10);
+}
+
+#pragma mark - UIActionSheet Delegate
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    
 }
 
 @end

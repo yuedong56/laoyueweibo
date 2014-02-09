@@ -10,7 +10,7 @@
 #import "BaseViewController.h"
 #import "KBHeaderView.h"
 
-@interface EditViewController : BaseViewController
+@interface EditViewController : BaseViewController<UIActionSheetDelegate>
 
 @property (nonatomic, strong) UITextView *weiboTextView;
 @property (nonatomic, strong) KBHeaderView *kbHeaderView;
