@@ -147,7 +147,15 @@
 #pragma mark - UIActionSheet Delegate
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
 {
-    
+    switch (buttonIndex) {
+        case 0: { //照相机
+            NSLog(@"0");
+        } break;
+        case 1: { //相册
+            NSLog(@"1");
+        } break;
+        default: break;
+    }
 }
 
 @end
