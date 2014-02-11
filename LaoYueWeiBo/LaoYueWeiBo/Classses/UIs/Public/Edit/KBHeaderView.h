@@ -8,12 +8,12 @@
 //  键盘上部的 HeaderView
 
 #define KBHeaderView_Heigth 80.0f
+#define LocateButton_Height 25.0f
 
 #import <UIKit/UIKit.h>
 
 @interface KBHeaderView : UIView
 
-
-
+@property (nonatomic, strong) UIButton *locateButton; //位置按钮
 
 @end

@@ -26,6 +26,10 @@
 		301E82CD188E75FE00A73299 /* EditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 301E82CC188E75FE00A73299 /* EditViewController.m */; };
 		301E82D0188E764800A73299 /* KBHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 301E82CF188E764800A73299 /* KBHeaderView.m */; };
 		306E711B188FA3210011E374 /* UINavigationController+Rotate.m in Sources */ = {isa = PBXBuildFile; fileRef = 306E711A188FA3210011E374 /* UINavigationController+Rotate.m */; };
+		307B10FF18AA1FAE0012D2D8 /* edit_locatebutton_h.png in Resources */ = {isa = PBXBuildFile; fileRef = 307B10FD18AA1FAE0012D2D8 /* edit_locatebutton_h.png */; };
+		307B110018AA1FAE0012D2D8 /* edit_locatebutton_n.png in Resources */ = {isa = PBXBuildFile; fileRef = 307B10FE18AA1FAE0012D2D8 /* edit_locatebutton_n.png */; };
+		307B110318AA207B0012D2D8 /* edit_locatebutton_n@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 307B110118AA207B0012D2D8 /* edit_locatebutton_n@2x.png */; };
+		307B110418AA207B0012D2D8 /* edit_locatebutton_h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 307B110218AA207B0012D2D8 /* edit_locatebutton_h@2x.png */; };
 		30FADF0B1883F08600A7247A /* NetWorkRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 30FADF0A1883F08600A7247A /* NetWorkRequest.m */; };
 		700520F6186B2AEE006AAD8B /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 700520F5186B2AEE006AAD8B /* HomeViewController.m */; };
 		700520F9186B2AFB006AAD8B /* MessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 700520F8186B2AFB006AAD8B /* MessageViewController.m */; };
@@ -123,6 +127,10 @@
 		301E82CF188E764800A73299 /* KBHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KBHeaderView.m; sourceTree = "<group>"; };
 		306E7119188FA3210011E374 /* UINavigationController+Rotate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+Rotate.h"; sourceTree = "<group>"; };
 		306E711A188FA3210011E374 /* UINavigationController+Rotate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+Rotate.m"; sourceTree = "<group>"; };
+		307B10FD18AA1FAE0012D2D8 /* edit_locatebutton_h.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = edit_locatebutton_h.png; sourceTree = "<group>"; };
+		307B10FE18AA1FAE0012D2D8 /* edit_locatebutton_n.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = edit_locatebutton_n.png; sourceTree = "<group>"; };
+		307B110118AA207B0012D2D8 /* edit_locatebutton_n@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "edit_locatebutton_n@2x.png"; sourceTree = "<group>"; };
+		307B110218AA207B0012D2D8 /* edit_locatebutton_h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "edit_locatebutton_h@2x.png"; sourceTree = "<group>"; };
 		30FADF091883F08600A7247A /* NetWorkRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetWorkRequest.h; sourceTree = "<group>"; };
 		30FADF0A1883F08600A7247A /* NetWorkRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetWorkRequest.m; sourceTree = "<group>"; };
 		700520F4186B2AEE006AAD8B /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
@@ -316,6 +324,17 @@
 				306E711A188FA3210011E374 /* UINavigationController+Rotate.m */,
 			);
 			path = Category;
+			sourceTree = "<group>";
+		};
+		307B10F918AA17CB0012D2D8 /* Edit */ = {
+			isa = PBXGroup;
+			children = (
+				307B10FE18AA1FAE0012D2D8 /* edit_locatebutton_n.png */,
+				307B110118AA207B0012D2D8 /* edit_locatebutton_n@2x.png */,
+				307B10FD18AA1FAE0012D2D8 /* edit_locatebutton_h.png */,
+				307B110218AA207B0012D2D8 /* edit_locatebutton_h@2x.png */,
+			);
+			path = Edit;
 			sourceTree = "<group>";
 		};
 		30FADF081883EFA600A7247A /* NetWork */ = {
@@ -568,6 +587,7 @@
 		70770F551882806F00AED8B1 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				307B10F918AA17CB0012D2D8 /* Edit */,
 				70770F561882806F00AED8B1 /* Login */,
 			);
 			path = Images;
@@ -658,9 +678,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				300FF44A1876A38D00C1B091 /* Default@2x.png in Resources */,
+				307B10FF18AA1FAE0012D2D8 /* edit_locatebutton_h.png in Resources */,
 				70770F5A1882821400AED8B1 /* wifi.png in Resources */,
 				7068FF2A18672964000A9CFC /* InfoPlist.strings in Resources */,
 				300FF4491876A38D00C1B091 /* Default.png in Resources */,
+				307B110318AA207B0012D2D8 /* edit_locatebutton_n@2x.png in Resources */,
+				307B110018AA1FAE0012D2D8 /* edit_locatebutton_n.png in Resources */,
+				307B110418AA207B0012D2D8 /* edit_locatebutton_h@2x.png in Resources */,
 				300FF4481876A38D00C1B091 /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
