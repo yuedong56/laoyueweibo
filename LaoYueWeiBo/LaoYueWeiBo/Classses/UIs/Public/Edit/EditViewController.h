@@ -9,10 +9,14 @@
 
 #import "BaseViewController.h"
 #import "KBHeaderView.h"
+#import "PhotosView.h"
+#import "LYAlbumView.h"
 
-@interface EditViewController : BaseViewController<UIActionSheetDelegate>
+@interface EditViewController : BaseViewController<UIActionSheetDelegate,LYAlbumViewDelegate>
 
 @property (nonatomic, strong) UITextView *weiboTextView;
 @property (nonatomic, strong) KBHeaderView *kbHeaderView;
+@property (nonatomic, strong) PhotosView *photesView;      //要添加的图片
+@property (nonatomic, strong) LYAlbumView *albumView;      //相册页面
 
 @end

@@ -10,9 +10,12 @@
 #define WBTextView_Width 275.0f
 
 #import "EditViewController.h"
+#import <AssetsLibrary/AssetsLibrary.h>
 
 @interface EditViewController ()
-
+{
+    float _kbHeaderView_y;
+}
 @end
 
 @implementation EditViewController
@@ -138,10 +141,61 @@
  */
 - (void)setSubViewsFrameWithKeyBoard_y:(float)keyBoard_y
 {
+    
     float kbHeaderView_y = keyBoard_y-KBHeaderView_Heigth-(IOS7AndLater?0:64);
     _kbHeaderView.frame = CGRectMake(0, kbHeaderView_y, ScreenWidth, KBHeaderView_Heigth);
     float weiboTextView_y = IOS7AndLater?74:10;
     _weiboTextView.frame = CGRectMake(20, weiboTextView_y, WBTextView_Width, kbHeaderView_y-weiboTextView_y-10);
+}
+
+//弹出相册页面
+- (void)presentAlbumView
+{
+    if (self.albumView) {
+        return;
+    }
+    
+    self.albumView = [[LYAlbumView alloc] initWithFrame:CGRectMake(0, -ScreenHeight, ScreenWidth, ScreenHeight)];
+    self.albumView.delegate = self;
+    [self.view.window addSubview:self.albumView];
+    
+    _kbHeaderView.frame = CGRectMake(0, _kbHeaderView_y, ScreenWidth, KBHeaderView_Heigth);
+    float albumView_y = _kbHeaderView.frame.origin.y+_kbHeaderView.frame.size.height;
+    [UIView animateWithDuration:0.25 animations:^{
+        self.albumView.frame = CGRectMake(0, albumView_y, ScreenWidth, ScreenHeight);
+    }];
+    
+    //生成整个photolibrary句柄的实例
+    ALAssetsLibrary *assetsLibrary = [[ALAssetsLibrary alloc] init];
+    [assetsLibrary enumerateGroupsWithTypes:ALAssetsGroupAll usingBlock:^(ALAssetsGroup *group, BOOL *stop)
+    {
+         [group enumerateAssetsUsingBlock:^(ALAsset *resultAlAsset, NSUInteger index, BOOL *stop)
+         {
+              NSString* assetType = [resultAlAsset valueForProperty:ALAssetPropertyType];
+              if ([assetType isEqualToString:ALAssetTypePhoto]) {
+                  CLog(@"Photo");
+                  //如果是照片就存入
+                  UIImage *image = [[UIImage alloc] initWithCGImage:resultAlAsset.thumbnail];
+                  [self.albumView.mediaArray addObject:image];
+              }else if([assetType isEqualToString:ALAssetTypeVideo]){
+                  CLog(@"Video");
+              }else if([assetType isEqualToString:ALAssetTypeUnknown]){
+                  CLog(@"Unknow AssetType");
+              }
+              
+              [self.albumView reloadData];
+          }];
+     } failureBlock:^(NSError *error) {
+         NSLog(@"Enumerate the asset groups failed.");
+     }];
+}
+
+#pragma mark - LYAlbumView Delegate
+- (void)albumView:(LYAlbumView *)albumView didUpSwipe:(UISwipeGestureRecognizer *)gesture
+{
+    [UIView animateWithDuration:0.25 animations:^{
+        albumView.frame = CGRectMake(0, 0, ScreenWidth, ScreenHeight);
+    }];
 }
 
 #pragma mark - UIActionSheet Delegate
@@ -152,7 +206,7 @@
             NSLog(@"0");
         } break;
         case 1: { //相册
-            NSLog(@"1");
+            [self presentAlbumView];
         } break;
         default: break;
     }
