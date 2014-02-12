@@ -9,6 +9,7 @@
 
 #define KBHeaderView_Heigth 80.0f
 #define LocateButton_Height 25.0f
+#define PhotoButton_Width 24.0f
 
 #import <UIKit/UIKit.h>
 
@@ -17,9 +18,9 @@
 @property (nonatomic, strong) UIButton *locateButton;  //位置按钮
 @property (nonatomic, strong) UILabel *wordsNumLabel;  //字数
 
-@property (nonatomic, strong) UIButton *photoButtom;   //拍张按钮
-@property (nonatomic, strong) UIButton *trendButton;   //#
+@property (nonatomic, strong) UIButton *photoButton;   //拍张按钮
 @property (nonatomic, strong) UIButton *mentionButton; //@
+@property (nonatomic, strong) UIButton *trendButton;   //#
 @property (nonatomic, strong) UIButton *emotionButton; //表情
 
 @end

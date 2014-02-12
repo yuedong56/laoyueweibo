@@ -17,6 +17,11 @@
     {
         [self initLocateButton];
         [self initWordsNumLabel];
+        
+        [self initPhotoButton];
+        [self initMentionButton];
+        [self initTrendButton];
+        [self initEmotionButton];
     }
     return self;
 }
@@ -60,6 +65,44 @@
     self.wordsNumLabel.text = @"140";
     self.wordsNumLabel.backgroundColor = ClearColor;
     [self addSubview:self.wordsNumLabel];
+}
+
+static float gapWidth = 40.0f;
+static float photoButton_y = 20.0f;
+//相机
+- (void)initPhotoButton
+{
+    self.photoButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    self.photoButton.frame = CGRectMake(photoButton_y, KBHeaderView_Heigth/2 + (KBHeaderView_Heigth/2-PhotoButton_Width)/2, PhotoButton_Width, PhotoButton_Width);
+    [self.photoButton setBackgroundImage:ImageWithFile(@"edit_camerabutton_n.png") forState:UIControlStateNormal];
+    [self addSubview:self.photoButton];
+}
+
+//@
+- (void)initMentionButton
+{
+    self.mentionButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    self.mentionButton.frame = CGRectMake(photoButton_y+PhotoButton_Width+gapWidth, KBHeaderView_Heigth/2 + (KBHeaderView_Heigth/2-PhotoButton_Width)/2, PhotoButton_Width, PhotoButton_Width);
+    [self.mentionButton setBackgroundImage:ImageWithFile(@"edit_mentionbutton_n.png") forState:UIControlStateNormal];
+    [self addSubview:self.mentionButton];
+}
+
+//#
+- (void)initTrendButton
+{
+    self.trendButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    self.trendButton.frame = CGRectMake(photoButton_y+(PhotoButton_Width+gapWidth)*2, KBHeaderView_Heigth/2 + (KBHeaderView_Heigth/2-PhotoButton_Width)/2, PhotoButton_Width, PhotoButton_Width);
+    [self.trendButton setBackgroundImage:ImageWithFile(@"edit_trendbutton_n.png") forState:UIControlStateNormal];
+    [self addSubview:self.trendButton];
+}
+
+//表情
+- (void)initEmotionButton
+{
+    self.emotionButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    self.emotionButton.frame = CGRectMake(photoButton_y+(PhotoButton_Width+gapWidth)*3, KBHeaderView_Heigth/2 + (KBHeaderView_Heigth/2-PhotoButton_Width)/2, PhotoButton_Width, PhotoButton_Width);
+    [self.emotionButton setBackgroundImage:ImageWithFile(@"edit_emoticonbutton_n.png") forState:UIControlStateNormal];
+    [self addSubview:self.emotionButton];
 }
 
 @end

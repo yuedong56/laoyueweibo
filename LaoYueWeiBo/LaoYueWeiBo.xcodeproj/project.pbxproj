@@ -25,6 +25,10 @@
 		301E82C9188E4B9600A73299 /* MMExampleDrawerVisualStateManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 301E82C8188E4B9600A73299 /* MMExampleDrawerVisualStateManager.m */; };
 		301E82CD188E75FE00A73299 /* EditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 301E82CC188E75FE00A73299 /* EditViewController.m */; };
 		301E82D0188E764800A73299 /* KBHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 301E82CF188E764800A73299 /* KBHeaderView.m */; };
+		302EB70F18AB7C0200D58610 /* edit_camerabutton_n.png in Resources */ = {isa = PBXBuildFile; fileRef = 302EB70B18AB7C0200D58610 /* edit_camerabutton_n.png */; };
+		302EB71018AB7C0200D58610 /* edit_emoticonbutton_n.png in Resources */ = {isa = PBXBuildFile; fileRef = 302EB70C18AB7C0200D58610 /* edit_emoticonbutton_n.png */; };
+		302EB71118AB7C0200D58610 /* edit_mentionbutton_n.png in Resources */ = {isa = PBXBuildFile; fileRef = 302EB70D18AB7C0200D58610 /* edit_mentionbutton_n.png */; };
+		302EB71218AB7C0200D58610 /* edit_trendbutton_n.png in Resources */ = {isa = PBXBuildFile; fileRef = 302EB70E18AB7C0200D58610 /* edit_trendbutton_n.png */; };
 		306E711B188FA3210011E374 /* UINavigationController+Rotate.m in Sources */ = {isa = PBXBuildFile; fileRef = 306E711A188FA3210011E374 /* UINavigationController+Rotate.m */; };
 		307B10FF18AA1FAE0012D2D8 /* edit_locatebutton_h.png in Resources */ = {isa = PBXBuildFile; fileRef = 307B10FD18AA1FAE0012D2D8 /* edit_locatebutton_h.png */; };
 		307B110018AA1FAE0012D2D8 /* edit_locatebutton_n.png in Resources */ = {isa = PBXBuildFile; fileRef = 307B10FE18AA1FAE0012D2D8 /* edit_locatebutton_n.png */; };
@@ -125,6 +129,10 @@
 		301E82CC188E75FE00A73299 /* EditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditViewController.m; sourceTree = "<group>"; };
 		301E82CE188E764800A73299 /* KBHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KBHeaderView.h; sourceTree = "<group>"; };
 		301E82CF188E764800A73299 /* KBHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KBHeaderView.m; sourceTree = "<group>"; };
+		302EB70B18AB7C0200D58610 /* edit_camerabutton_n.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = edit_camerabutton_n.png; sourceTree = "<group>"; };
+		302EB70C18AB7C0200D58610 /* edit_emoticonbutton_n.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = edit_emoticonbutton_n.png; sourceTree = "<group>"; };
+		302EB70D18AB7C0200D58610 /* edit_mentionbutton_n.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = edit_mentionbutton_n.png; sourceTree = "<group>"; };
+		302EB70E18AB7C0200D58610 /* edit_trendbutton_n.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = edit_trendbutton_n.png; sourceTree = "<group>"; };
 		306E7119188FA3210011E374 /* UINavigationController+Rotate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+Rotate.h"; sourceTree = "<group>"; };
 		306E711A188FA3210011E374 /* UINavigationController+Rotate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+Rotate.m"; sourceTree = "<group>"; };
 		307B10FD18AA1FAE0012D2D8 /* edit_locatebutton_h.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = edit_locatebutton_h.png; sourceTree = "<group>"; };
@@ -333,6 +341,10 @@
 				307B110118AA207B0012D2D8 /* edit_locatebutton_n@2x.png */,
 				307B10FD18AA1FAE0012D2D8 /* edit_locatebutton_h.png */,
 				307B110218AA207B0012D2D8 /* edit_locatebutton_h@2x.png */,
+				302EB70B18AB7C0200D58610 /* edit_camerabutton_n.png */,
+				302EB70D18AB7C0200D58610 /* edit_mentionbutton_n.png */,
+				302EB70E18AB7C0200D58610 /* edit_trendbutton_n.png */,
+				302EB70C18AB7C0200D58610 /* edit_emoticonbutton_n.png */,
 			);
 			path = Edit;
 			sourceTree = "<group>";
@@ -677,14 +689,18 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				302EB70F18AB7C0200D58610 /* edit_camerabutton_n.png in Resources */,
 				300FF44A1876A38D00C1B091 /* Default@2x.png in Resources */,
 				307B10FF18AA1FAE0012D2D8 /* edit_locatebutton_h.png in Resources */,
+				302EB71218AB7C0200D58610 /* edit_trendbutton_n.png in Resources */,
 				70770F5A1882821400AED8B1 /* wifi.png in Resources */,
 				7068FF2A18672964000A9CFC /* InfoPlist.strings in Resources */,
 				300FF4491876A38D00C1B091 /* Default.png in Resources */,
 				307B110318AA207B0012D2D8 /* edit_locatebutton_n@2x.png in Resources */,
+				302EB71018AB7C0200D58610 /* edit_emoticonbutton_n.png in Resources */,
 				307B110018AA1FAE0012D2D8 /* edit_locatebutton_n.png in Resources */,
 				307B110418AA207B0012D2D8 /* edit_locatebutton_h@2x.png in Resources */,
+				302EB71118AB7C0200D58610 /* edit_mentionbutton_n.png in Resources */,
 				300FF4481876A38D00C1B091 /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
