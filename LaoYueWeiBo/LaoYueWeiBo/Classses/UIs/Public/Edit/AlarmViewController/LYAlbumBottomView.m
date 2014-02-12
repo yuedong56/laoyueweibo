@@ -16,10 +16,10 @@
     if (self)
     {
         self.cancelButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        self.cancelButton.frame = CGRectMake(0, 0, ScreenWidth, BottomView_Height);
+        self.cancelButton.frame = CGRectMake(0, 0, 80, BottomView_Height);
         [self.cancelButton setTitle:@"取消" forState:UIControlStateNormal];
         [self.cancelButton setTitleColor:GrayColor forState:UIControlStateNormal];
-        [self.cancelButton setTitleColor:LightGrayColor forState:UIControlStateHighlighted];
+        [self.cancelButton setTitleColor:DarkGrayColor forState:UIControlStateHighlighted];
         [self addSubview:self.cancelButton];
     }
     return self;

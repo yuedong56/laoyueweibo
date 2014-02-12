@@ -27,6 +27,6 @@
 
 @protocol LYAlbumViewDelegate <NSObject>
 
-- (void)albumView:(LYAlbumView *)albumView didUpSwipe:(UISwipeGestureRecognizer *)gesture;
+- (void)albumViewDidUpSwipe:(LYAlbumView *)albumView;
 
 @end

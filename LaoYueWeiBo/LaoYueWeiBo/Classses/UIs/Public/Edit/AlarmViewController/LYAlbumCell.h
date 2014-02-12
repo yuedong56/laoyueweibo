@@ -13,5 +13,6 @@
 @interface LYAlbumCell : PSTCollectionViewCell
 
 @property (nonatomic, strong) UIButton *photoImageButton;
+@property (nonatomic, strong) UIImageView *markImageView;
 
 @end

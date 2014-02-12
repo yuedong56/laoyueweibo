@@ -18,6 +18,10 @@
         self.photoImageButton = [UIButton buttonWithType:UIButtonTypeCustom];
         self.photoImageButton.frame = CGRectMake(0, 0, AlbumCell_Width, AlbumCell_Width);
         [self addSubview:self.photoImageButton];
+        
+        self.markImageView = [[UIImageView alloc] initWithFrame:CGRectMake(AlbumCell_Width*0.6, AlbumCell_Width*0.6, 22, 22)];
+        self.markImageView.image = ImageNamed(@"edt_alarm_selected.png");
+        [self addSubview:self.markImageView];
     }
     return self;
 }

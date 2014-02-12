@@ -17,12 +17,10 @@
     if (self)
     {
         self.backgroundColor = WhiteColor;
-        self.alpha = 0.5;
         self.mediaArray = [NSMutableArray arrayWithCapacity:0];
         
         [self initMediaCollectView];
         [self initAlbumBottomView];
-        [self addSwipeGesture];
     }
     return self;
 }
@@ -54,21 +52,6 @@
     [self addSubview:self.bottomView];
 }
 
-- (void)addSwipeGesture
-{
-    UISwipeGestureRecognizer *swipe = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handleSwipeGeture:)];
-    swipe.direction = UISwipeGestureRecognizerDirectionUp;
-//    [self.mediaCollectionView addGestureRecognizer:swipe];
-    self.mediaCollectionView.userInteractionEnabled = NO;
-    [self addGestureRecognizer:swipe];
-}
-
-#pragma mark - Gesture Events
-- (void)handleSwipeGeture:(UISwipeGestureRecognizer *)swipeGesture
-{
-    [self.delegate albumView:self didUpSwipe:swipeGesture];
-}
-
 - (void)reloadData
 {
     [self.mediaCollectionView reloadData];
@@ -95,6 +78,14 @@
 {
     //点击
     NSLog(@"(%d,%d)",indexPath.section,indexPath.row);
+}
+
+#pragma mark - UIScrollView Delegate
+- (void)scrollViewWillEndDragging:(UIScrollView *)scrollView withVelocity:(CGPoint)velocity targetContentOffset:(inout CGPoint *)targetContentOffset
+{
+    if (velocity.y > 0) {
+        [self.delegate albumViewDidUpSwipe:self];
+    }
 }
 
 @end

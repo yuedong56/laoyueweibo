@@ -113,7 +113,7 @@ static float photoButton_y = 25.0f;
     float doneButton_Width = 82.0f;
     self.doneButton = [UIButton buttonWithType:UIButtonTypeCustom];
     self.doneButton.frame = CGRectMake(ScreenWidth-doneButton_Width, 39, doneButton_Width, doneButton_Height);
-    [self.doneButton setTitle:@"done" forState:UIControlStateNormal];
+    [self.doneButton setTitle:@"弹回" forState:UIControlStateNormal];
     [self.doneButton setTitleColor:GrayColor forState:UIControlStateNormal];
     [self.doneButton setTitleColor:DarkGrayColor forState:UIControlStateHighlighted];
     [self addSubview:self.doneButton];

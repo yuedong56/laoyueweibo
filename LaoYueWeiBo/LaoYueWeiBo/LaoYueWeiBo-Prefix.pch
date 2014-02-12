@@ -46,6 +46,6 @@
 
 //图片
 #define ImageWithFile(name) ([UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:name ofType:nil]])
-#define ImageNamed(name) [UIImage imageNamed:[UIUtil imageName:name]]
+#define ImageNamed(name) [UIImage imageNamed:name]
 
 #endif

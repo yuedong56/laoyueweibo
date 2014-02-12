@@ -7,6 +7,7 @@
 //
 
 #define KeyboardAnimationDuration 0.25f
+#define AlbumAnimationDuration 0.5f
 #define WBTextView_Width 275.0f
 
 #import "EditViewController.h"
@@ -47,12 +48,10 @@
 {
     //移除通知
     [[NSNotificationCenter defaultCenter] removeObserver:self];
-    //键盘消失时子视图的动画
-    [UIView animateWithDuration:KeyboardAnimationDuration animations:^{
-        [self setSubViewsFrameWithKeyBoard_y:ScreenHeight];
-    }];
     //键盘取消
     [_weiboTextView resignFirstResponder];
+    //
+    [self dismissAlbumView];
 }
 
 //设置导航栏
@@ -114,16 +113,25 @@
 - (void)doneButtonPress:(UIButton *)button
 {
     [self.weiboTextView resignFirstResponder];
+    [self dismissAlbumView];
+}
+
+- (void)albumCancelButtonPress:(UIButton *)button
+{
+    [self dismissAlbumView];
 }
 
 #pragma mark - KeyBoard Notificition
 - (void)keyboardWillShow:(NSNotification *)noti
 {
+    [self dismissAlbumView];
+
     [UIView animateWithDuration:[[noti.userInfo objectForKey:UIKeyboardAnimationDurationUserInfoKey] floatValue]
                      animations:^
     {
         CGPoint kbOrigin = [[noti.userInfo objectForKey:UIKeyboardFrameEndUserInfoKey] CGRectValue].origin;
         [self setSubViewsFrameWithKeyBoard_y:kbOrigin.y];
+        _kbHeaderView_y = kbOrigin.y;
     }];
 }
 
@@ -155,15 +163,20 @@
         return;
     }
     
-    self.albumView = [[LYAlbumView alloc] initWithFrame:CGRectMake(0, -ScreenHeight, ScreenWidth, ScreenHeight)];
+    self.albumView = [[LYAlbumView alloc] initWithFrame:CGRectMake(0, ScreenHeight, ScreenWidth, ScreenHeight)];
     self.albumView.delegate = self;
     [self.view.window addSubview:self.albumView];
     
-    _kbHeaderView.frame = CGRectMake(0, _kbHeaderView_y, ScreenWidth, KBHeaderView_Heigth);
-    float albumView_y = _kbHeaderView.frame.origin.y+_kbHeaderView.frame.size.height;
-    [UIView animateWithDuration:0.25 animations:^{
+    [UIView animateWithDuration:AlbumAnimationDuration animations:^{
+        [self setSubViewsFrameWithKeyBoard_y:_kbHeaderView_y];
+    }];
+    
+    float albumView_y = _kbHeaderView.frame.origin.y+_kbHeaderView.frame.size.height + (IOS7AndLater?0:64);
+    [UIView animateWithDuration:AlbumAnimationDuration animations:^{
         self.albumView.frame = CGRectMake(0, albumView_y, ScreenWidth, ScreenHeight);
     }];
+    
+    [self.albumView.bottomView.cancelButton addTarget:self action:@selector(albumCancelButtonPress:) forControlEvents:UIControlEventTouchUpInside];
     
     //生成整个photolibrary句柄的实例
     ALAssetsLibrary *assetsLibrary = [[ALAssetsLibrary alloc] init];
@@ -190,10 +203,21 @@
      }];
 }
 
-#pragma mark - LYAlbumView Delegate
-- (void)albumView:(LYAlbumView *)albumView didUpSwipe:(UISwipeGestureRecognizer *)gesture
+- (void)dismissAlbumView
 {
-    [UIView animateWithDuration:0.25 animations:^{
+    [UIView animateWithDuration:AlbumAnimationDuration animations:^{
+        self.albumView.frame = CGRectMake(0, ScreenHeight, ScreenHeight, ScreenHeight);
+        [self setSubViewsFrameWithKeyBoard_y:ScreenHeight];
+    } completion:^(BOOL finished) {
+        [self.albumView removeFromSuperview];
+        self.albumView = nil;
+    }];
+}
+
+#pragma mark - LYAlbumView Delegate
+- (void)albumViewDidUpSwipe:(LYAlbumView *)albumView
+{
+    [UIView animateWithDuration:AlbumAnimationDuration animations:^{
         albumView.frame = CGRectMake(0, 0, ScreenWidth, ScreenHeight);
     }];
 }
