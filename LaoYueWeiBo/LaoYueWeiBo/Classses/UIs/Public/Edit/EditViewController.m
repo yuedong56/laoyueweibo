@@ -15,7 +15,7 @@
 
 @interface EditViewController ()
 {
-    float _kbHeaderView_y;
+    float _keyBoard_y;
 }
 @end
 
@@ -90,9 +90,13 @@
 #pragma mark - Button Events
 - (void)photoButtonPress:(UIButton *)button
 {
-    [self.weiboTextView resignFirstResponder];
-    UIActionSheet *actSheet = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:@"取消" destructiveButtonTitle:nil otherButtonTitles:@"照相机",@"相册", nil];
-    [actSheet showInView:self.view];
+    if (self.albumView) {
+        [self.weiboTextView becomeFirstResponder];
+    } else {
+        [self.weiboTextView resignFirstResponder];
+        UIActionSheet *actSheet = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:@"取消" destructiveButtonTitle:nil otherButtonTitles:@"照相机",@"相册", nil];
+        [actSheet showInView:self.view];
+    }
 }
 
 - (void)mentionButtonPress:(UIButton *)button
@@ -131,7 +135,7 @@
     {
         CGPoint kbOrigin = [[noti.userInfo objectForKey:UIKeyboardFrameEndUserInfoKey] CGRectValue].origin;
         [self setSubViewsFrameWithKeyBoard_y:kbOrigin.y];
-        _kbHeaderView_y = kbOrigin.y;
+        _keyBoard_y = kbOrigin.y;
     }];
 }
 
@@ -163,19 +167,24 @@
         return;
     }
     
+    //初始化相册页面
     self.albumView = [[LYAlbumView alloc] initWithFrame:CGRectMake(0, ScreenHeight, ScreenWidth, ScreenHeight)];
     self.albumView.delegate = self;
     [self.view.window addSubview:self.albumView];
     
+    //kbHeadView上移（动画）
     [UIView animateWithDuration:AlbumAnimationDuration animations:^{
-        [self setSubViewsFrameWithKeyBoard_y:_kbHeaderView_y];
+        [self setSubViewsFrameWithKeyBoard_y:_keyBoard_y];
     }];
     
+    //弹出相册页面（动画）
     float albumView_y = _kbHeaderView.frame.origin.y+_kbHeaderView.frame.size.height + (IOS7AndLater?0:64);
     [UIView animateWithDuration:AlbumAnimationDuration animations:^{
         self.albumView.frame = CGRectMake(0, albumView_y, ScreenWidth, ScreenHeight);
+        self.albumView.mediaCollectionView.frame = CGRectMake(0, 0, ScreenWidth, ScreenHeight-_keyBoard_y);
     }];
     
+    //增加取消按钮事件
     [self.albumView.bottomView.cancelButton addTarget:self action:@selector(albumCancelButtonPress:) forControlEvents:UIControlEventTouchUpInside];
     
     //生成整个photolibrary句柄的实例
@@ -219,6 +228,7 @@
 {
     [UIView animateWithDuration:AlbumAnimationDuration animations:^{
         albumView.frame = CGRectMake(0, 0, ScreenWidth, ScreenHeight);
+        self.albumView.mediaCollectionView.frame = CGRectMake(0, IOS7AndLater?0:20, ScreenWidth, ScreenHeight-BottomView_Height-(IOS7AndLater?0:20));
     }];
 }
 

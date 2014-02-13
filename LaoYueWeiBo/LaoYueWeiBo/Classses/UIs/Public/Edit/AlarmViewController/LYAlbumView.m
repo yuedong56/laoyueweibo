@@ -34,8 +34,8 @@
     flowLayout.sectionInset = UIEdgeInsetsMake(5, 5, 5, 5);
     
     //创建一屏的视图大小
-    self.mediaCollectionView = [[PSTCollectionView alloc] initWithFrame:CGRectMake(0, 0, ScreenWidth, ScreenHeight-BottomView_Height) collectionViewLayout:flowLayout];
-    
+    self.mediaCollectionView = [[PSTCollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:flowLayout];
+
     //对Cell注册(必须否则程序会挂掉)
     [self.mediaCollectionView registerClass:[LYAlbumCell class] forCellWithReuseIdentifier:@"Cell"];
     [self.mediaCollectionView setUserInteractionEnabled:YES];
@@ -48,7 +48,7 @@
 
 - (void)initAlbumBottomView
 {
-    self.bottomView = [[LYAlbumBottomView alloc] initWithFrame:CGRectMake(0, self.mediaCollectionView.frame.size.height, ScreenWidth, BottomView_Height)];
+    self.bottomView = [[LYAlbumBottomView alloc] initWithFrame:CGRectMake(0, ScreenHeight-BottomView_Height, ScreenWidth, BottomView_Height)];
     [self addSubview:self.bottomView];
 }
 
