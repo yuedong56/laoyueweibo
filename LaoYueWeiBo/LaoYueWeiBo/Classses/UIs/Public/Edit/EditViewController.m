@@ -188,27 +188,27 @@
     [self.albumView.bottomView.cancelButton addTarget:self action:@selector(albumCancelButtonPress:) forControlEvents:UIControlEventTouchUpInside];
     
     //生成整个photolibrary句柄的实例
-    ALAssetsLibrary *assetsLibrary = [[ALAssetsLibrary alloc] init];
+    ALAssetsLibrary *assetsLibrary = [LYUtils defaultAssetsLibrary];
     [assetsLibrary enumerateGroupsWithTypes:ALAssetsGroupAll usingBlock:^(ALAssetsGroup *group, BOOL *stop)
     {
          [group enumerateAssetsUsingBlock:^(ALAsset *resultAlAsset, NSUInteger index, BOOL *stop)
          {
-              NSString* assetType = [resultAlAsset valueForProperty:ALAssetPropertyType];
+              NSString *assetType = [resultAlAsset valueForProperty:ALAssetPropertyType];
               if ([assetType isEqualToString:ALAssetTypePhoto]) {
                   CLog(@"Photo");
-                  //如果是照片就存入
-                  UIImage *image = [[UIImage alloc] initWithCGImage:resultAlAsset.thumbnail];
-                  [self.albumView.mediaArray addObject:image];
+                  [self.albumView.mediaArray addObject:resultAlAsset];
               }else if([assetType isEqualToString:ALAssetTypeVideo]){
                   CLog(@"Video");
               }else if([assetType isEqualToString:ALAssetTypeUnknown]){
                   CLog(@"Unknow AssetType");
               }
-              
-              [self.albumView reloadData];
+             //刷新相册
+             if (index >= group.numberOfAssets) {
+                 [self.albumView reloadData];
+             }
           }];
      } failureBlock:^(NSError *error) {
-         NSLog(@"Enumerate the asset groups failed.");
+         CLog(@"Enumerate the asset groups failed.");
      }];
 }
 

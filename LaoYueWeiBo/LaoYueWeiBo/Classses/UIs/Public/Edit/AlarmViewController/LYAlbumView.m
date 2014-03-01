@@ -8,6 +8,7 @@
 
 #import "LYAlbumView.h"
 #import "LYAlbumCell.h"
+#import <AssetsLibrary/AssetsLibrary.h>
 
 @implementation LYAlbumView
 
@@ -35,6 +36,7 @@
     
     //创建一屏的视图大小
     self.mediaCollectionView = [[PSTCollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:flowLayout];
+    self.mediaCollectionView.backgroundColor = WhiteColor;
 
     //对Cell注册(必须否则程序会挂掉)
     [self.mediaCollectionView registerClass:[LYAlbumCell class] forCellWithReuseIdentifier:@"Cell"];
@@ -67,17 +69,23 @@
 - (PSTCollectionViewCell *)collectionView:(PSTCollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     LYAlbumCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"Cell" forIndexPath:indexPath];
-    UIImage *image = [self.mediaArray objectAtIndex:indexPath.row];
+    ALAsset *resultAlAsset = [self.mediaArray objectAtIndex:indexPath.row];
+    UIImage *image = [[UIImage alloc] initWithCGImage:resultAlAsset.thumbnail];
+    
     [cell.photoImageButton setBackgroundImage:image forState:UIControlStateNormal];
+    [cell.photoImageButton addTarget:self action:@selector(photoButtonPress:event:) forControlEvents:UIControlEventTouchUpInside];
     
     return cell;
 }
 
-//代理－选择行的触发事件
-- (void)collectionView:(PSTCollectionView *)collectionView didDeselectItemAtIndexPath:(NSIndexPath *)indexPath
+#pragma mark - Button Events
+- (void)photoButtonPress:(UIButton *)button event:(id)event
 {
-    //点击
-    NSLog(@"(%d,%d)",indexPath.section,indexPath.row);
+    NSSet *touches = [event allTouches];
+    UITouch *touch = [touches anyObject];
+    CGPoint currentTouchPosition = [touch locationInView:self.mediaCollectionView];
+    NSIndexPath *indexPath = [self.mediaCollectionView indexPathForItemAtPoint:currentTouchPosition];
+    NSLog(@"indexPath === %@",indexPath);
 }
 
 #pragma mark - UIScrollView Delegate

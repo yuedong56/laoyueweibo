@@ -34,5 +34,18 @@
 	return status;
 }
 
+/**
+ * @brief 获取photo句柄单例
+ */
++ (ALAssetsLibrary *)defaultAssetsLibrary
+{
+    static dispatch_once_t pred = 0;
+    static ALAssetsLibrary *library = nil;
+    dispatch_once(&pred,
+                  ^{
+                      library = [[ALAssetsLibrary alloc] init];
+                  });
+    return library;
+}
 
 @end
