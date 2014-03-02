@@ -196,7 +196,7 @@
               NSString *assetType = [resultAlAsset valueForProperty:ALAssetPropertyType];
               if ([assetType isEqualToString:ALAssetTypePhoto]) {
                   CLog(@"Photo");
-                  [self.albumView.mediaArray addObject:resultAlAsset];
+                  [self.albumView.albumItemsArray addObject:[[AlbumItem alloc] initWithAsset:resultAlAsset]];
               }else if([assetType isEqualToString:ALAssetTypeVideo]){
                   CLog(@"Video");
               }else if([assetType isEqualToString:ALAssetTypeUnknown]){

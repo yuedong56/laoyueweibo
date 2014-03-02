@@ -12,5 +12,6 @@
 @interface LYAlbumBottomView : UIView
 
 @property (nonatomic, strong) UIButton *cancelButton;
+@property (nonatomic, strong) UIButton *doneButton;
 
 @end

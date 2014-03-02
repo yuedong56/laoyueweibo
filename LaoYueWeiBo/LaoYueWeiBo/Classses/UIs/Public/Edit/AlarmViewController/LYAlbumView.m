@@ -18,7 +18,8 @@
     if (self)
     {
         self.backgroundColor = WhiteColor;
-        self.mediaArray = [NSMutableArray arrayWithCapacity:0];
+        self.albumItemsArray = [NSMutableArray arrayWithCapacity:0];
+        self.selectItemsArray = [NSMutableArray arrayWithCapacity:0];
         
         [self initMediaCollectView];
         [self initAlbumBottomView];
@@ -60,20 +61,25 @@
 }
 
 #pragma mark - PSTCollection DataSource
-//集合代理-每一部分数据项
 - (NSInteger)collectionView:(PSTCollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
-    return self.mediaArray.count;
+    return self.albumItemsArray.count;
 }
 
-//Cell
 - (PSTCollectionViewCell *)collectionView:(PSTCollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     LYAlbumCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"Cell" forIndexPath:indexPath];
-    ALAsset *resultAlAsset = [self.mediaArray objectAtIndex:indexPath.row];
-    UIImage *image = [[UIImage alloc] initWithCGImage:resultAlAsset.thumbnail];
     
+    AlbumItem *albumItem = [self.albumItemsArray objectAtIndex:indexPath.row];
+    
+    UIImage *image = [[UIImage alloc] initWithCGImage:albumItem.albumAsset.thumbnail];
     [cell.photoImageButton setBackgroundImage:image forState:UIControlStateNormal];
     [cell.photoImageButton addTarget:self action:@selector(photoButtonPress:event:) forControlEvents:UIControlEventTouchUpInside];
+    
+    if (albumItem.isSelected) {
+        cell.markImageView.image = ImageNamed(@"edt_alarm_selected.png");
+    } else {
+        cell.markImageView.image = nil;
+    }
     
     return cell;
 }
@@ -85,7 +91,26 @@
     UITouch *touch = [touches anyObject];
     CGPoint currentTouchPosition = [touch locationInView:self.mediaCollectionView];
     NSIndexPath *indexPath = [self.mediaCollectionView indexPathForItemAtPoint:currentTouchPosition];
-    NSLog(@"indexPath === %@",indexPath);
+
+    AlbumItem *albumItem = self.albumItemsArray[indexPath.row];
+
+    if (self.selectItemsArray.count<MaxPhotoNum || albumItem.isSelected)
+    {
+        albumItem.isSelected = !albumItem.isSelected;
+        if (albumItem.isSelected) {
+            [self.selectItemsArray addObject:albumItem.albumAsset];
+        } else {
+            [self.selectItemsArray removeObject:albumItem.albumAsset];
+        }
+        
+        [self.mediaCollectionView reloadItemsAtIndexPaths:[NSArray arrayWithObject:indexPath]];
+    }
+    else
+    {
+        NSString *msg = [NSString stringWithFormat:@"最多只能上传%d张图片！",MaxPhotoNum];
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"通知" message:msg delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+        [alertView show];
+    }
 }
 
 #pragma mark - UIScrollView Delegate
@@ -94,6 +119,21 @@
     if (velocity.y > 0) {
         [self.delegate albumViewDidUpSwipe:self];
     }
+}
+
+@end
+
+
+
+@implementation AlbumItem
+
+- (id)initWithAsset:(ALAsset *)asset
+{
+    self = [super init];
+    if (self) {
+        self.albumAsset = asset;
+    }
+    return self;
 }
 
 @end
